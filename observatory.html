@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carpinteria Salt Marsh Fish Observatory</title>
-    <meta name="description" content="13 years of fish community monitoring in one of Southern California's last remaining coastal wetlands.">
+    <meta name="description" content="14 years of fish community monitoring in one of Southern California's last remaining coastal wetlands.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -551,8 +551,11 @@
         .tooltip-title { font-weight: 600; margin-bottom: 0.25rem; }
         .tooltip-value { color: var(--sand); font-family: var(--font-display); font-size: 1.1rem; }
     </style>
+<script src="outputs/site-data.js"></script>
+<meta name="carp-data-sha256" content="baf02924ca88074a1c18d99814d3f9428576a0e51f29c4a9852cc2d21153a28b">
 </head>
 <body>
+<aside style="padding:1rem;margin:5rem 1rem 1rem;border:2px solid #789;">Updated 26 October 2026 (authenticated EDI revision check): SONGS revisions edi.647.9 / edi.648.9, 2012–2025. Taxon counts include unresolved identifications. Annual location summaries are repeated measurements, not independent visits. Gaussian model panels are exploratory and should not be used for inference; some fitted densities are negative. Sampling-month summaries do not establish seasonality. Nursery-function estimates have been withdrawn. <a href="carpinteria_salt_marsh_fishes.html">Read the updated guide and methods</a>.</aside>
     <nav class="nav" id="nav">
         <a href="#" class="nav-logo">CSM Fish Observatory</a>
         <ul class="nav-links">
@@ -568,18 +571,18 @@
         <div class="hero-content">
             <p class="hero-eyebrow">SONGS Mitigation Monitoring Program</p>
             <h1 class="hero-title">Carpinteria Salt Marsh<br><em>Fish Observatory</em></h1>
-            <p class="hero-subtitle">Thirteen years of scientific monitoring reveal the hidden dynamics of fish communities in one of Southern California's last remaining coastal wetlands.</p>
+            <p class="hero-subtitle">Fourteen years of scientific monitoring reveal the hidden dynamics of fish communities in one of Southern California's last remaining coastal wetlands.</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="hero-stat-value" id="stat-years">13</div>
+                    <div class="hero-stat-value" id="stat-years">14</div>
                     <div class="hero-stat-label">Years of Data</div>
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-value" id="stat-species">43</div>
-                    <div class="hero-stat-label">Fish Species</div>
+                    <div class="hero-stat-label">Recorded Taxa</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="hero-stat-value" id="stat-samples">156</div>
+                    <div class="hero-stat-value" id="stat-samples">168</div>
                     <div class="hero-stat-label">Samples</div>
                 </div>
             </div>
@@ -637,25 +640,25 @@
             <div class="section-header">
                 <span class="section-number" style="color: var(--sand);">03 — Interactive Data</span>
                 <h2 class="section-title">Explore the Dataset</h2>
-                <p class="section-subtitle">Dive into 13 years of fish community data.</p>
+                <p class="section-subtitle">Dive into 14 years of fish community data.</p>
             </div>
             <div class="chart-tabs">
                 <button class="chart-tab active" data-chart="abundance">Species Abundance</button>
                 <button class="chart-tab" data-chart="trends">Temporal Trends</button>
                 <button class="chart-tab" data-chart="habitat">Habitat Comparison</button>
                 <button class="chart-tab" data-chart="scatter">Density vs Richness</button>
-                <button class="chart-tab" data-chart="guilds">Ecological Guilds</button>
+                <button class="chart-tab" data-chart="guilds">Feeding Guilds (Assigned Taxa Only)</button>
                 <button class="chart-tab" data-chart="heatmap">Species Heatmap</button>
             </div>
             <div class="chart-container">
                 <div class="chart-panel active" id="panel-abundance">
-                    <a href="/api/figures/species-abundance?format=png" class="download-btn" target="_blank">↓ PNG</a>
+                    <a href="carpinteria_salt_marsh_fishes.html">Full guide</a>
                     <h3 class="chart-title">Top Fish Species by Abundance</h3>
-                    <p class="chart-description">Cumulative counts across all surveys from 2012-2024.</p>
+                    <p class="chart-description">Cumulative counts across all surveys from 2012-2025.</p>
                     <div class="chart-area" id="chart-abundance"></div>
                 </div>
                 <div class="chart-panel" id="panel-trends">
-                    <a href="/api/figures/temporal-trends?format=png" class="download-btn" target="_blank">↓ PNG</a>
+                    <a href="carpinteria_salt_marsh_fishes.html">Full guide</a>
                     <h3 class="chart-title">Fish Density Over Time</h3>
                     <p class="chart-description">Annual mean fish density by habitat type.</p>
                     <div class="chart-area" id="chart-trends"></div>
@@ -665,7 +668,7 @@
                     </div>
                 </div>
                 <div class="chart-panel" id="panel-habitat">
-                    <a href="/api/figures/habitat-comparison?format=png" class="download-btn" target="_blank">↓ PNG</a>
+                    <a href="carpinteria_salt_marsh_fishes.html">Full guide</a>
                     <h3 class="chart-title">Habitat Comparison</h3>
                     <p class="chart-description">Mean density and richness with standard deviation.</p>
                     <div class="chart-area" id="chart-habitat"></div>
@@ -680,13 +683,13 @@
                     </div>
                 </div>
                 <div class="chart-panel" id="panel-guilds">
-                    <h3 class="chart-title">Ecological Guilds</h3>
+                    <h3 class="chart-title">Feeding Guilds (Assigned Taxa Only)</h3>
                     <p class="chart-description">Fish species grouped by their ecological role in the marsh.</p>
                     <div class="chart-area" id="chart-guilds"></div>
                     <div class="chart-legend" id="guilds-legend"></div>
                 </div>
                 <div class="chart-panel" id="panel-heatmap">
-                    <a href="/api/figures/heatmap?format=png" class="download-btn" target="_blank">↓ PNG</a>
+                    <a href="carpinteria_salt_marsh_fishes.html">Full guide</a>
                     <h3 class="chart-title">Species by Year Heatmap</h3>
                     <p class="chart-description">Relative abundance patterns across years for top species.</p>
                     <div class="chart-area" id="chart-heatmap" style="overflow-x: auto;"></div>
@@ -727,16 +730,15 @@
                 <div class="footer-links">
                     <h4>Data Sources</h4>
                     <ul>
-                        <li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.8">EDI Repository</a></li>
-                        <li><a href="/api/data">JSON API</a></li>
+                        <li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.9">EDI Repository</a></li>
+                        <li><a href="outputs/dashboard_data.json">JSON API</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Downloads</h4>
                     <ul>
-                        <li><a href="/api/figures/species-abundance?format=pdf">Species Chart (PDF)</a></li>
-                        <li><a href="/api/figures/temporal-trends?format=svg">Trends Chart (SVG)</a></li>
-                    </ul>
+                        <li><a href="carpinteria_salt_marsh_fishes.html">Full guide</a></li>
+</ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -754,29 +756,28 @@
     <script>
         let DATA = null;
         const SPECIES_INFO = {
-            "ATAF": { common: "Topsmelt", scientific: "Atherinops affinis", icon: "🐟", guild: "Marine Migrant", photo: "/assets/fish/topsmelt.jpg" },
-            "FUPA": { common: "California Killifish", scientific: "Fundulus parvipinnis", icon: "🐠", guild: "Resident Specialist", photo: "/assets/fish/killifish.jpg" },
-            "ATFA": { common: "Atherinopsidae (unid.)", scientific: "Atherinopsidae sp.", icon: "🐟", guild: "Marine Migrant", photo: "/assets/fish/topsmelt.jpg" },
-            "CLIO": { common: "Arrow Goby", scientific: "Clevelandia ios", icon: "🐡", guild: "Resident Specialist", photo: "/assets/fish/arrow_goby.jpg" },
-            "POMY": { common: "Specklefin Midshipman", scientific: "Porichthys myriaster", icon: "🎸", guild: "Marine Migrant", photo: "/assets/fish/midshipman.jpg" },
-            "GOFA": { common: "Gobiidae (unid.)", scientific: "Gobiidae sp.", icon: "🐡", guild: "Resident Specialist", photo: "/assets/fish/arrow_goby.jpg" },
-            "LEAR": { common: "Staghorn Sculpin", scientific: "Leptocottus armatus", icon: "🦂", guild: "Marine Migrant", photo: "/assets/fish/sculpin.jpg" },
-            "PACA": { common: "California Halibut", scientific: "Paralichthys californicus", icon: "🐟", guild: "Nursery User", photo: "/assets/fish/halibut.jpg" },
-            "GIMI": { common: "Longjaw Mudsucker", scientific: "Gillichthys mirabilis", icon: "🐡", guild: "Resident Specialist", photo: "/assets/fish/mudsucker.jpg" },
-            "PAMA": { common: "Spotted Sand Bass", scientific: "Paralabrax maculatofasciatus", icon: "🐟", guild: "Nursery User", photo: "/assets/fish/sand_bass.jpg" },
-            "ACFV": { common: "Yellowfin Goby", scientific: "Acanthogobius flavimanus", icon: "🐡", guild: "Occasional Visitor", photo: "/assets/fish/yellowfin_goby.jpg" },
-            "QUYC": { common: "Shadow Goby", scientific: "Quietula y-cauda", icon: "🐡", guild: "Resident Specialist", photo: "/assets/fish/shadow_goby.jpg" },
-            "ILGI": { common: "Cheekspot Goby", scientific: "Ilypnus gilberti", icon: "🐡", guild: "Resident Specialist", photo: "/assets/fish/cheekspot_goby.jpg" },
-            "CYAG": { common: "Shiner Perch", scientific: "Cymatogaster aggregata", icon: "🐟", guild: "Marine Migrant", photo: "/assets/fish/shiner_perch.jpg" },
-            "URHA": { common: "Round Stingray", scientific: "Urolophus halleri", icon: "🦈", guild: "Marine Migrant", photo: "/assets/fish/stingray.jpg" }
+            "ATAF": { common: "Topsmelt", scientific: "Atherinops affinis", icon: "🐟", guild: "Marine Migrant", photo: "assets/fish/topsmelt.jpg" },
+            "FUPA": { common: "California Killifish", scientific: "Fundulus parvipinnis", icon: "🐠", guild: "Resident Specialist", photo: "assets/fish/killifish.jpg" },
+            "ATFA": { common: "Atherinopsidae (unid.)", scientific: "Atherinopsidae sp.", icon: "🐟", guild: "Marine Migrant", photo: "assets/fish/topsmelt.jpg" },
+            "CLIO": { common: "Arrow Goby", scientific: "Clevelandia ios", icon: "🐡", guild: "Resident Specialist", photo: "assets/fish/arrow_goby.jpg" },
+            "POMY": { common: "Specklefin Midshipman", scientific: "Porichthys myriaster", icon: "🎸", guild: "Marine Migrant", photo: "assets/fish/midshipman.jpg" },
+            "GOFA": { common: "Gobiidae (unid.)", scientific: "Gobiidae sp.", icon: "🐡", guild: "Resident Specialist", photo: "assets/fish/arrow_goby.jpg" },
+            "LEAR": { common: "Staghorn Sculpin", scientific: "Leptocottus armatus", icon: "🦂", guild: "Marine Migrant", photo: "assets/fish/sculpin.jpg" },
+            "PACA": { common: "California Halibut", scientific: "Paralichthys californicus", icon: "🐟", guild: "Coastal Visitor", photo: "assets/fish/halibut.jpg" },
+            "GIMI": { common: "Longjaw Mudsucker", scientific: "Gillichthys mirabilis", icon: "🐡", guild: "Resident Specialist", photo: "assets/fish/mudsucker.jpg" },
+            "PAMA": { common: "Spotted Sand Bass", scientific: "Paralabrax maculatofasciatus", icon: "🐟", guild: "Coastal Visitor", photo: "assets/fish/sand_bass.jpg" },
+            "ACFV": { common: "Yellowfin Goby", scientific: "Acanthogobius flavimanus", icon: "🐡", guild: "Occasional Visitor", photo: "assets/fish/yellowfin_goby.jpg" },
+            "QUYC": { common: "Shadow Goby", scientific: "Quietula y-cauda", icon: "🐡", guild: "Resident Specialist", photo: "assets/fish/shadow_goby.jpg" },
+            "ILGI": { common: "Cheekspot Goby", scientific: "Ilypnus gilberti", icon: "🐡", guild: "Resident Specialist", photo: "assets/fish/cheekspot_goby.jpg" },
+            "CYAG": { common: "Shiner Perch", scientific: "Cymatogaster aggregata", icon: "🐟", guild: "Marine Migrant", photo: "assets/fish/shiner_perch.jpg" },
+            "URHA": { common: "Round Stingray", scientific: "Urolophus halleri", icon: "🦈", guild: "Marine Migrant", photo: "assets/fish/stingray.jpg" }
         };
         const COLORS = { ocean: '#68a6d4', marsh: '#52b788', sand: '#e9c46a' };
 
         async function loadData() {
             try {
-                let response = await fetch('/api/data');
-                if (!response.ok) response = await fetch('outputs/api/dashboard_data.json');
-                DATA = await response.json();
+                DATA = window.CARP_DATA;
+                if (!DATA) throw new Error('Missing outputs/site-data.js; run make all.');
                 initializePage();
             } catch (e) {
                 console.error('Error:', e);
@@ -796,7 +797,7 @@
         function renderFindings() {
             const h = DATA.model_results.habitat_comparison;
             const t = DATA.model_results.temporal_trends;
-            const d = DATA.model_results.diversity_indices;
+            const d = DATA.model_results.diversity;
             const diff = (h.tidal_creek.mean_density - h.main_channel.mean_density).toFixed(1);
             const effectSize = h.density_test.cohens_d;
             const effectLabel = effectSize > 0.8 ? 'large' : effectSize > 0.5 ? 'medium' : 'small';
@@ -805,36 +806,33 @@
                 <div class="finding-card highlight">
                     <div class="finding-stat">+${diff}</div>
                     <div class="finding-label">More fish/m² in Tidal Creeks</div>
-                    <p class="finding-text">Tidal creeks support significantly higher fish densities (${h.tidal_creek.mean_density.toFixed(1)} ± ${h.tidal_creek.std_density.toFixed(1)} vs ${h.main_channel.mean_density.toFixed(1)} ± ${h.main_channel.std_density.toFixed(1)} fish/m²).</p>
-                    <span class="finding-badge">p = ${h.density_test.p_value.toFixed(4)}</span>
-                    <span class="finding-badge" style="background: var(--ocean);">Cohen's d = ${effectSize.toFixed(2)} (${effectLabel})</span>
+                    <p class="finding-text">Descriptive means: tidal creek ${h.tidal_creek.mean_density.toFixed(1)} vs main channel ${h.main_channel.mean_density.toFixed(1)} fish/m². Locations are repeatedly sampled; these are not independent visits.</p>
                 </div>
                 <div class="finding-card">
-                    <div class="finding-stat">${t.density_trend.trend === 'no significant trend' ? 'Stable' : t.density_trend.trend}</div>
-                    <div class="finding-label">Population Trend (Mann-Kendall)</div>
-                    <p class="finding-text">Sen's slope: ${t.density_trend.sens_slope > 0 ? '+' : ''}${t.density_trend.sens_slope.toFixed(3)} fish/m²/year. ${t.density_trend.significant ? 'Statistically significant.' : 'Not statistically significant.'}</p>
-                    <span class="finding-badge" style="background: ${t.density_trend.significant ? '#e76f51' : 'var(--gray)'};">p = ${t.density_trend.p_value.toFixed(4)}</span>
+                    <div class="finding-stat">${DATA.summary.years_of_data} years</div>
+                    <div class="finding-label">Annual monitoring</div>
+                    <p class="finding-text">${DATA.summary.year_range.start}–${DATA.summary.year_range.end}. Annual variation is substantial; no detected monotonic trend does not establish stability.</p>
                 </div>
                 <div class="finding-card">
                     <div class="finding-stat">H' = ${d.shannon.toFixed(2)}</div>
                     <div class="finding-label">Shannon Diversity Index</div>
-                    <p class="finding-text">High diversity with ${d.richness} species. Evenness J' = ${d.evenness.toFixed(2)} indicates ${d.evenness > 0.7 ? 'relatively even' : 'moderate'} species distribution.</p>
+                    <p class="finding-text">${d.richness} positive-catch seine taxon codes, pooled across years. Evenness J' = ${d.evenness.toFixed(2)}. Unresolved identifications are included.</p>
                     <span class="finding-badge">Simpson D = ${d.simpson.toFixed(2)}</span>
                 </div>
                 <div class="finding-card">
                     <div class="finding-stat">${DATA.summary.total_samples}</div>
-                    <div class="finding-label">Sampling Events</div>
-                    <p class="finding-text">${DATA.summary.years_of_data} years of monitoring (${DATA.summary.year_range[0]}-${DATA.summary.year_range[1]}). Over ${(DATA.summary.total_seine_records/1000).toFixed(0)}k individual fish recorded.</p>
+                    <div class="finding-label">Annual Location Summaries</div>
+                    <p class="finding-text">${DATA.summary.n_locations} fixed locations, measured annually. Raw table rows include zero catches and are not numbers of fish.</p>
                 </div>
                 <div class="finding-card">
                     <div class="finding-stat">${h.tidal_creek.mean_richness.toFixed(1)} vs ${h.main_channel.mean_richness.toFixed(1)}</div>
                     <div class="finding-label">Species Richness by Habitat</div>
-                    <p class="finding-text">Both habitats support similar species richness (p = ${h.richness_test.p_value.toFixed(4)}). Tidal creek: ${h.tidal_creek.mean_richness.toFixed(1)} ± ${h.tidal_creek.std_richness.toFixed(1)}, Main channel: ${h.main_channel.mean_richness.toFixed(1)} ± ${h.main_channel.std_richness.toFixed(1)}.</p>
+                    <p class="finding-text">Mean published annual richness at tidal-creek and main-channel locations, respectively. This summary does not establish equivalent communities.</p>
                 </div>
                 <div class="finding-card">
-                    <div class="finding-stat">t = ${h.density_test.t_statistic.toFixed(2)}</div>
-                    <div class="finding-label">Welch's t-test Statistic</div>
-                    <p class="finding-text">Two-sample test comparing habitat types (n₁ = ${h.tidal_creek.n}, n₂ = ${h.main_channel.n}). Unequal variance assumed.</p>
+                    <div class="finding-stat">${DATA.summary.total_species}</div>
+                    <div class="finding-label">Positive-catch taxa, both methods</div>
+                    <p class="finding-text">Includes unresolved identifications. Seine and enclosure catches sample different components of the community.</p>
                 </div>
             `;
         }
@@ -849,7 +847,7 @@
                 'Occasional Visitor': '#6a51a3'
             };
             document.getElementById('species-grid').innerHTML = species.map(s => {
-                const info = SPECIES_INFO[s.species_code] || { common: s.species_code, scientific: s.species_name, icon: '🐟', guild: 'Unknown', photo: null };
+                const info = SPECIES_INFO[s.species_code] || { common: s.species_code, scientific: [s.genus_name, s.species_name].filter(Boolean).join(" "), icon: '🐟', guild: 'Unknown', photo: null };
                 const guildColor = guildColors[info.guild] || '#666';
                 const headerContent = info.photo
                     ? `<div class="species-header species-photo" style="background-image:url('${info.photo}');background-size:cover;background-position:center;"></div>`
@@ -966,21 +964,7 @@
         function renderScatterChart() {
             const container = document.getElementById('chart-scatter');
             container.innerHTML = '';
-            // Generate scatter data from annual trends
-            const scatterData = DATA.charts.annual_trends.flatMap(t => [
-                ...Array(6).fill(null).map((_, i) => ({
-                    year: t.year, habitat: 'Tidal Creek',
-                    density: t.tc_density * (0.7 + Math.random() * 0.6),
-                    richness: t.richness * (0.8 + Math.random() * 0.4),
-                    site: `TC-${i + 1}`
-                })),
-                ...Array(6).fill(null).map((_, i) => ({
-                    year: t.year, habitat: 'Main Channel',
-                    density: t.mc_density * (0.7 + Math.random() * 0.6),
-                    richness: t.richness * (0.8 + Math.random() * 0.4),
-                    site: `MC-${i + 1}`
-                }))
-            ]);
+            const scatterData = DATA.charts.location_summaries;
             const margin = { top: 20, right: 30, bottom: 50, left: 60 };
             const width = container.clientWidth - margin.left - margin.right;
             const height = 380 - margin.top - margin.bottom;
@@ -1026,12 +1010,9 @@
         function renderGuildsChart() {
             const container = document.getElementById('chart-guilds');
             container.innerHTML = '';
-            const guildsData = [
-                { guild: 'Resident Specialists', count: 65, color: '#238b45' },
-                { guild: 'Marine Migrants', count: 25, color: '#2171b5' },
-                { guild: 'Nursery Users', count: 7, color: '#fe9929' },
-                { guild: 'Occasional Visitors', count: 3, color: '#6a51a3' }
-            ];
+            const guildsData = DATA.advanced.guilds.feeding_summary.map((g, i) => ({
+                guild: g.feeding_guild, count: +(100 * g.mean_proportion).toFixed(1), color: d3.schemeTableau10[i]
+            }));
             const width = container.clientWidth;
             const height = 320;
             const radius = Math.min(width, height) / 2 - 30;
@@ -1049,7 +1030,7 @@
                 })
                 .on('mouseleave', function() { d3.select(this).attr('opacity', 1); hideTooltip(); });
             svg.append('text').attr('dy', '-0.1em').attr('text-anchor', 'middle').attr('fill', 'white').attr('font-size', '28px').attr('font-weight', '600').text('100%');
-            svg.append('text').attr('dy', '1.5em').attr('text-anchor', 'middle').attr('fill', 'rgba(255,255,255,0.6)').attr('font-size', '12px').text('of catch');
+            svg.append('text').attr('dy', '1.5em').attr('text-anchor', 'middle').attr('fill', 'rgba(255,255,255,0.6)').attr('font-size', '12px').text('assigned taxa only');
             // Legend
             const legend = document.getElementById('guilds-legend');
             legend.innerHTML = guildsData.map(d => `<div class="legend-item"><div class="legend-dot" style="background: ${d.color};"></div><span>${d.guild} (${d.count}%)</span></div>`).join('');
@@ -1073,7 +1054,7 @@
             const colorScale = d3.scaleSequential().domain([0, 1]).interpolator(d3.interpolateBlues);
             const flatData = species.flatMap(sp => years.map(yr => {
                 const found = heatmapData.find(d => d.species === sp && d.year === yr);
-                return { species: sp, year: yr, value: found ? found.value : 0 };
+                return { species: sp, year: yr, value: found ? found.normalized : 0 };
             }));
             svg.selectAll('.cell').data(flatData).join('rect')
                 .attr('x', d => x(d.year)).attr('y', d => y(d.species))

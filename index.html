@@ -8,7 +8,7 @@
   ║  Visualization: D3.js | Analysis: R (vegan, lme4, mgcv)                   ║
   ║                                                                           ║
   ║  Questions? stier@ucsb.edu | https://oceanrecoveries.com                  ║
-  ║  Source: https://github.com/adrianstier/carpinteria-salt-marsh-fishes     ║
+  ║  Source: https://github.com/adrianstier/sbc-2012-carpinteria-salt-marsh-fish     ║
   ║                                                                           ║
   ║  v1.0 - January 2026                                                      ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carpinteria Salt Marsh Fish Observatory</title>
-    <meta name="description" content="13 years of fish community monitoring in one of Southern California's last remaining coastal wetlands.">
+    <meta name="description" content="14 years of fish community monitoring in one of Southern California's last remaining coastal wetlands.">
     <meta name="author" content="Adrian Stier, Ocean Recoveries Lab, UC Santa Barbara">
 
     <!-- Fonts - Cormorant Garamond (elegant serif) + DM Sans (clean modern) -->
@@ -1170,8 +1170,11 @@
             text-shadow: 0 0 20px rgba(233, 196, 106, 0.3);
         }
     </style>
+<script src="outputs/site-data.js"></script>
+<meta name="carp-data-sha256" content="baf02924ca88074a1c18d99814d3f9428576a0e51f29c4a9852cc2d21153a28b">
 </head>
 <body>
+<aside style="padding:1rem;margin:5rem 1rem 1rem;border:2px solid #789;">Updated 26 October 2026 (authenticated EDI revision check): SONGS revisions edi.647.9 / edi.648.9, 2012–2025. Taxon counts include unresolved identifications. Annual location summaries are repeated measurements, not independent visits. Gaussian model panels are exploratory and should not be used for inference; some fitted densities are negative. Sampling-month summaries do not establish seasonality. Nursery-function estimates have been withdrawn. <a href="carpinteria_salt_marsh_fishes.html">Read the updated guide and methods</a>.</aside>
     <nav class="nav" id="nav">
         <a href="#" class="nav-logo">CSM Fish Observatory</a>
         <ul class="nav-links">
@@ -1204,19 +1207,19 @@
         <div class="hero-content">
             <p class="hero-eyebrow">SONGS Mitigation Monitoring Program · UC Santa Barbara</p>
             <h1 class="hero-title">Carpinteria Salt Marsh<br><em>Fish Observatory</em></h1>
-            <p class="hero-subtitle">230 acres of tidal flats, pickleweed, and fish. Thirteen years of scientific monitoring reveal the hidden dynamics of communities in one of Southern California's last remaining coastal wetlands.</p>
+            <p class="hero-subtitle">230 acres of tidal flats, pickleweed, and fish. Fourteen years of scientific monitoring reveal the hidden dynamics of communities in one of Southern California's last remaining coastal wetlands.</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="hero-stat-value" id="stat-years">13</div>
+                    <div class="hero-stat-value" id="stat-years">14</div>
                     <div class="hero-stat-label">Years of Data</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="hero-stat-value" id="stat-species">71</div>
-                    <div class="hero-stat-label">Fish Species</div>
+                    <div class="hero-stat-value" id="stat-species">43</div>
+                    <div class="hero-stat-label">Recorded Taxa</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="hero-stat-value" id="stat-samples">156</div>
-                    <div class="hero-stat-label">Sampling Events</div>
+                    <div class="hero-stat-value" id="stat-samples">168</div>
+                    <div class="hero-stat-label">Annual Location Summaries</div>
                 </div>
             </div>
         </div>
@@ -1312,7 +1315,7 @@
                 <div class="method-card">
                     <div class="method-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/><circle cx="11.5" cy="17.5" r="2" fill="currentColor" opacity="0.3"/><path d="M11.5 14V6" stroke-linecap="round"/></svg></div>
                     <h4>Temperature Extremes</h4>
-                    <p>Water temperature swings <strong>15–32°C (59–90°F) twice daily</strong> with tidal cycles. During low tide, shallow pools heat rapidly under the sun, then cool dramatically when oceanic water floods back in.</p>
+                    <p>Shallow pools warm during exposure and mix with incoming ocean water. These fish tables do not measure a twice-daily temperature range.</p>
                 </div>
                 <div class="method-card">
                     <div class="method-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" opacity="0.4"/><path d="M8 12a4 4 0 018 0" stroke-dasharray="2 2"/></svg></div>
@@ -1342,7 +1345,7 @@
                         <ul style="list-style: none; padding: 0; color: var(--gray);">
                             <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light);"><strong style="color: var(--navy);">Fused Pelvic Fins:</strong> Form a sucking disc to cling to rocks and mud, preventing them from being swept away by tidal currents.</li>
                             <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light);"><strong style="color: var(--navy);">Air Breathing:</strong> The Longjaw Mudsucker has a capillary network in the roof of its mouth that allows gas exchange with air!</li>
-                            <li style="padding: 0.5rem 0;"><strong style="color: var(--navy);">Burrowing Behavior:</strong> Mudsuckers take over abandoned burrows from ghost shrimp and crabs—males will even suck crabs right out of their burrows!</li>
+                            <li style="padding: 0.5rem 0;"><strong style="color: var(--navy);">Refuges:</strong> Arrow gobies can use shrimp burrows. Refuge use and capture probability differ among species.</li>
                         </ul>
                     </div>
                     <div>
@@ -1351,7 +1354,7 @@
                         <ul style="list-style: none; padding: 0; color: var(--gray);">
                             <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light);"><strong style="color: var(--navy);">Eye Migration:</strong> Larvae start with eyes on both sides. As they develop, one eye physically migrates across the skull to join the other!</li>
                             <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--gray-light);"><strong style="color: var(--navy);">Master Camouflage:</strong> Can rapidly change skin color and pattern using specialized pigment cells (chromatophores).</li>
-                            <li style="padding: 0.5rem 0;"><strong style="color: var(--navy);">Counter-Shading:</strong> Dark on top, light below—providing protection throughout the water column.</li>
+                            <li style="padding: 0.5rem 0;"><strong style="color: var(--navy);">Body Orientation:</strong> The pigmented, eyed side faces away from the substrate; the blind side rests against it.</li>
                         </ul>
                     </div>
                 </div>
@@ -1363,8 +1366,7 @@
                         Field Note
                     </h5>
                     <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.7; font-style: italic; margin: 0;">
-                        "We've caught longjaw mudsuckers that survived overnight in the cooler after being accidentally left behind. That air-breathing adaptation is very real—these fish are incredibly tough."
-                        <span style="display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.8rem; color: var(--navy);">— A. Stier, field observations</span>
+                        Air-exposure tolerance is not a reason to leave captured fish out of water. Follow the approved handling procedures and the field leader’s instructions.
                     </p>
                 </div>
             </div>
@@ -1377,15 +1379,15 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px;">
                         <h4 style="color: var(--sand); margin-bottom: 0.75rem;">California Halibut</h4>
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Juvenile halibut spend their first 1–2 years in shallow estuarine habitats before moving offshore. Without healthy salt marshes, halibut populations would decline.</p>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Juveniles use shallow coastal and embayment habitats. Catch identity alone does not reveal fish age or quantify nursery contribution.</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px;">
                         <h4 style="color: var(--sand); margin-bottom: 0.75rem;">Leopard Sharks</h4>
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Female leopard sharks enter salt marshes specifically to give birth. Warm temperatures accelerate embryo development, and shallow waters exclude larger predators.</p>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Uses shallow coastal and estuarine habitats. An occurrence record does not establish reproduction at the sampling site.</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px;">
                         <h4 style="color: var(--sand); margin-bottom: 0.75rem;">Round Stingrays</h4>
-                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Like leopard sharks, female stingrays use warm, protected marsh waters for pupping—giving newborns a safe start to life.</p>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">May occur in shallow estuarine water. These monitoring counts do not establish where individuals were born.</p>
                     </div>
                 </div>
             </div>
@@ -1398,8 +1400,8 @@
             <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center;">
                 <div>
                     <span class="section-number" style="color: var(--coral);">A Vanishing Ecosystem</span>
-                    <h2 class="section-title" style="margin-bottom: 1.5rem;">Only 3% Remain</h2>
-                    <p style="font-size: 1.1rem; color: var(--text); margin-bottom: 1.5rem; line-height: 1.8;">Since European settlement, <strong>over 90% of California's tidal wetlands</strong> have been destroyed by agricultural conversion, urban development, port construction, and flood control projects.</p>
+                    <h2 class="section-title" style="margin-bottom: 1.5rem;">Wetland Loss and Restoration</h2>
+                    <p style="font-size: 1.1rem; color: var(--text); margin-bottom: 1.5rem; line-height: 1.8;">Agricultural conversion, urban development, port construction and flood control have removed or altered extensive coastal wetlands. Estimates of loss depend on the region and habitat definition.</p>
                     <p style="color: var(--gray); line-height: 1.8;">Carpinteria Salt Marsh represents one of the <strong>last relatively undisturbed tidal wetlands</strong> in Southern California. Its fish community provides a valuable reference for understanding healthy wetland function—critical information for restoration projects.</p>
 
                     <div style="margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-radius: 6px; border-left: 4px solid var(--coral);">
@@ -1438,7 +1440,7 @@
             <div class="section-header">
                 <span class="section-number">03 - Data Collection</span>
                 <h2 class="section-title">How We Monitor the Marsh</h2>
-                <p class="section-subtitle">A 13-year monitoring program using complementary sampling techniques to capture the full diversity of the fish community.</p>
+                <p class="section-subtitle">A 14-year monitoring program using complementary sampling techniques to capture the full diversity of the fish community.</p>
             </div>
 
             <!-- Data Source Context -->
@@ -1457,15 +1459,15 @@
                         <div style="display: grid; gap: 1rem;">
                             <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.15);">
                                 <span style="color: rgba(255,255,255,0.7);">Time Period</span>
-                                <strong>2012 – 2024</strong>
+                                <strong>2012 – 2025</strong>
                             </div>
                             <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.15);">
                                 <span style="color: rgba(255,255,255,0.7);">Total Records</span>
-                                <strong id="total-records-display">367,245</strong>
+                                <strong id="total-records-display">392,970</strong>
                             </div>
                             <div style="display: flex; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.15);">
-                                <span style="color: rgba(255,255,255,0.7);">Species Detected</span>
-                                <strong id="species-detected-display">40+</strong>
+                                <span style="color: rgba(255,255,255,0.7);">Taxon Codes Detected</span>
+                                <strong id="species-detected-display">43</strong>
                             </div>
                             <div style="display: flex; justify-content: space-between;">
                                 <span style="color: rgba(255,255,255,0.7);">Habitat Types</span>
@@ -1486,13 +1488,13 @@
                 <div class="method-card">
                     <div class="method-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M4 12h16M8 8V6M16 8V6" stroke-linecap="round"/><path d="M7 14v3M12 14v3M17 14v3" opacity="0.4" stroke-linecap="round"/></svg></div>
                     <h4>Enclosure Traps</h4>
-                    <p>Small (0.43 m²) enclosure traps target <strong>resident gobies</strong> and other small benthic fish in tidal creek habitats. Traps are placed during low tide and retrieved after the tide recedes.</p>
+                    <p>Small (0.43 m²) enclosures sample benthic gobies in both tidal-creek and main-channel habitats. Repeated net passes are made within each enclosure under the published protocol.</p>
                     <span class="method-stat" id="enclosure-records">26,685 records</span>
                 </div>
                 <div class="method-card">
                     <div class="method-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4c0 8 4 12 8 16 4-4 8-8 8-16"/><path d="M4 4c4 1 8 1 8 1s4 0 8-1" stroke-linecap="round"/><path d="M6 8c3 0.5 6 0.5 6 0.5s3 0 6-0.5M8 12c2 0.3 4 0.3 4 0.3s2 0 4-0.3" opacity="0.4"/></svg></div>
                     <h4>Beach Seines</h4>
-                    <p>Larger beach seines (~100 m²) sample the main channel, capturing <strong>mobile species</strong> like topsmelt, killifish, and juvenile halibut. Nets are deployed at standardized sites.</p>
+                    <p>Beach seines sample larger mobile fishes in both habitats. Sampling area and repeated hauls are documented in the source tables.</p>
                     <span class="method-stat" id="seine-records">340,560 records</span>
                 </div>
                 <div class="method-card">
@@ -1514,7 +1516,7 @@
                     <ul style="color: var(--gray); font-size: 0.9rem; line-height: 1.8; padding-left: 1.25rem;">
                         <li>Fast-swimming fishes can <strong>outswim</strong> the seine net</li>
                         <li>Some species <strong>jump over</strong> the net when cornered</li>
-                        <li>Burrowing fishes in their burrows are <strong>missed entirely</strong></li>
+                        <li>Burrowing fishes in their burrows are <strong>less likely to be captured</strong></li>
                         <li>Enclosure traps only sample <strong>small areas</strong> (0.43 m²)</li>
                     </ul>
                 </div>
@@ -1525,8 +1527,8 @@
                     </h4>
                     <p style="color: var(--gray); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem;">The complementary sampling design captures different components of the fish community:</p>
                     <ul style="color: var(--gray); font-size: 0.9rem; line-height: 1.8; padding-left: 1.25rem;">
-                        <li><strong>Enclosure traps</strong> target small, benthic gobies in tidal creeks</li>
-                        <li><strong>Beach seines</strong> capture larger, mobile fish in main channels</li>
+                        <li><strong>Enclosure traps</strong> target small benthic gobies in both habitats</li>
+                        <li><strong>Beach seines</strong> capture larger mobile fish in both habitats</li>
                         <li>Together they provide a <strong>comprehensive picture</strong></li>
                         <li>Different habitats support <strong>distinct communities</strong></li>
                     </ul>
@@ -1544,13 +1546,13 @@
                         <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">All data is publicly available through the Environmental Data Initiative (EDI) repository.</p>
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.647.8" target="_blank" style="background: var(--marsh); color: var(--white); padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.647.9" target="_blank" style="background: var(--marsh); color: var(--white); padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                             Seine Data (EDI)
                         </a>
-                        <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.8" target="_blank" style="background: var(--ocean); color: var(--white); padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.9" target="_blank" style="background: var(--ocean); color: var(--white); padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            Enclosure Data (EDI)
+                            Annual Summary Data (EDI)
                         </a>
                     </div>
                 </div>
@@ -1570,7 +1572,7 @@
             <div class="section-header">
                 <span class="section-number" style="color: var(--sand);">04 - Interactive Data</span>
                 <h2 class="section-title">Explore the Dataset</h2>
-                <p class="section-subtitle">Dive into 13 years of fish community data with interactive visualizations.</p>
+                <p class="section-subtitle">Dive into 14 years of fish community data with interactive visualizations.</p>
             </div>
             <div class="chart-tabs">
                 <button class="chart-tab active" data-chart="abundance">Species Abundance</button>
@@ -1580,19 +1582,19 @@
                 <button class="chart-tab" data-chart="nmds">NMDS Ordination</button>
                 <button class="chart-tab" data-chart="gam">GAM Predictions</button>
                 <button class="chart-tab" data-chart="heatmap">Species Heatmap</button>
-                <button class="chart-tab" data-chart="seasonality">Seasonality</button>
+                <button class="chart-tab" data-chart="seasonality">Sampling Calendar</button>
                 <button class="chart-tab" data-chart="guilds">Ecological Guilds</button>
                 <button class="chart-tab" data-chart="stability">Community Stability</button>
             </div>
             <div class="chart-container">
                 <div class="chart-panel active" id="panel-abundance">
                     <h3 class="chart-title">Top Fish Species by Abundance</h3>
-                    <p class="chart-description">Cumulative counts across all seine surveys from 2012-2024. Topsmelt alone accounts for <strong>46%</strong> of total catch. Shannon diversity H' = 1.35, Simpson = 0.66, Evenness = 0.37.</p>
+                    <p class="chart-description">Cumulative seine catches only; these are not whole-marsh population sizes. Diversity indices pool the full monitoring period.</p>
                     <div class="chart-area" id="chart-abundance"></div>
                 </div>
                 <div class="chart-panel" id="panel-trends">
                     <h3 class="chart-title">Fish Density Over Time</h3>
-                    <p class="chart-description">Annual mean fish density (fish/m²) by habitat. Mann-Kendall trend test indicates <strong>no significant long-term trend</strong> (tau = 0.026, p = 0.95). Density peaked in 2015 at 56.7 fish/m² and fluctuates with interannual variability.</p>
+                    <p class="chart-description">Annual mean density by habitat from the published performance summaries. Differences among years are descriptive; a non-significant trend test does not establish stability.</p>
                     <div class="chart-area" id="chart-trends"></div>
                     <div class="chart-legend">
                         <div class="legend-item"><div class="legend-dot" style="background: #52b788;"></div><span>Tidal Creek</span></div>
@@ -1601,26 +1603,26 @@
                 </div>
                 <div class="chart-panel" id="panel-habitat">
                     <h3 class="chart-title">Habitat Comparison</h3>
-                    <p class="chart-description">Tidal creeks support <strong>significantly higher fish density</strong> (30.9 vs 17.7 fish/m², Welch's t = 3.23, p = 0.0016, Cohen's d = 0.52). Species richness does not differ between habitats (p = 0.17). Error bars show ± 1 SD.</p>
+                    <p class="chart-description">Mean and SD across repeated annual location summaries. Habitat differences are descriptive; independent-sample tests do not account for repeated locations or shared annual conditions.</p>
                     <div class="chart-area" id="chart-habitat"></div>
                     <div class="chart-legend">
-                        <div class="legend-item"><div class="legend-dot" style="background: #52b788;"></div><span>Tidal Creek (n=78)</span></div>
-                        <div class="legend-item"><div class="legend-dot" style="background: #68a6d4;"></div><span>Main Channel (n=78)</span></div>
+                        <div class="legend-item"><div class="legend-dot" style="background: #52b788;"></div><span>Tidal Creek (84 annual location summaries)</span></div>
+                        <div class="legend-item"><div class="legend-dot" style="background: #68a6d4;"></div><span>Main Channel (84 annual location summaries)</span></div>
                     </div>
                 </div>
                 <div class="chart-panel" id="panel-accumulation">
                     <h3 class="chart-title">Species Accumulation Curve</h3>
-                    <p class="chart-description">Rarefaction curve (random permutation, 100 iterations) shows richness asymptote near <strong>38 species</strong> after ~400 sampling events. The curve's plateau indicates comprehensive sampling coverage of the fish assemblage.</p>
+                    <p class="chart-description">Randomized accumulation of positive-catch seine taxon codes across sampled location-dates (100 permutations). The shaded band is ±1 SD, not a confidence interval. A plateau does not prove all marsh species were detected.</p>
                     <div class="chart-area" id="chart-accumulation"></div>
                 </div>
                 <div class="chart-panel" id="panel-nmds">
                     <h3 class="chart-title">NMDS Ordination</h3>
-                    <p class="chart-description">Non-metric multidimensional scaling (Bray-Curtis distance) reveals community composition shifts over time. <strong>Stress = 0.065</strong> indicates excellent 2D representation. Mean beta diversity = 0.47; communities show moderate year-to-year variation.</p>
+                    <p class="chart-description">Bray–Curtis ordination of annual seine catch totals. Differences may reflect catch composition, effort, and detection. This is a descriptive display, not an environmental-effects test.</p>
                     <div class="chart-area" id="chart-nmds"></div>
                 </div>
                 <div class="chart-panel" id="panel-gam">
                     <h3 class="chart-title">GAM Model Predictions</h3>
-                    <p class="chart-description">Generalized Additive Model captures <strong>non-linear temporal dynamics</strong>: density ~ habitat + s(year, edf=3.73). The smooth term is highly significant (F=13.0, p<0.001). Model explains 31.4% of deviance (R² = 0.29), revealing cyclical abundance patterns.</p>
+                    <p class="chart-description">Exploratory legacy Gaussian smooth, not a validated prediction model. Residual dependence and unequal variance remain; some fitted densities are negative. Do not interpret its p-values or intervals as reliable ecological inference.</p>
                     <div class="chart-area" id="chart-gam"></div>
                     <div class="chart-legend">
                         <div class="legend-item"><div class="legend-dot" style="background: #e9c46a;"></div><span>Fitted Values</span></div>
@@ -1630,22 +1632,22 @@
                 </div>
                 <div class="chart-panel" id="panel-heatmap">
                     <h3 class="chart-title">Species by Year Heatmap</h3>
-                    <p class="chart-description">Relative abundance patterns for the <strong>10 most abundant species</strong> (normalized within each species). Reveals species-specific temporal dynamics: <strong>10 core species</strong> appear >80% of years, while 22 satellite species occur sporadically.</p>
+                    <p class="chart-description">Annual seine counts scaled to each taxon’s maximum. Counts depend on effort and capture probability; zeros and unresolved identifications need care.</p>
                     <div class="chart-area" id="chart-heatmap" style="overflow-x: auto;"></div>
                 </div>
                 <div class="chart-panel" id="panel-seasonality">
-                    <h3 class="chart-title">Seasonal Fish Abundance</h3>
-                    <p class="chart-description">Monthly CPUE (catch per unit effort) reveals strong seasonality with <strong>peak abundance in July</strong>. Summer months show highest fish use of the marsh, coinciding with recruitment of marine migrant species like topsmelt and shiner perch.</p>
+                    <h3 class="chart-title">Catch by Sampling Month</h3>
+                    <p class="chart-description">Catch per sampled haul, grouped by survey month. These annual surveys were not designed to measure seasonality; differences can reflect survey year and timing.</p>
                     <div class="chart-area" id="chart-seasonality"></div>
                 </div>
                 <div class="chart-panel" id="panel-guilds">
                     <h3 class="chart-title">Ecological Guild Composition</h3>
-                    <p class="chart-description">Community dominated by <strong>planktivores (62%)</strong> and omnivores (34%). Habitat affinity shows <strong>59% marine migrants</strong> using the marsh as nursery habitat, with 41% year-round residents. Guild classification follows Elliott et al. estuarine fish guilds.</p>
+                    <p class="chart-description">Provisional feeding and habitat classifications for assigned taxa only. Unassigned taxa are excluded from these percentages; they do not measure nursery function.</p>
                     <div class="chart-area" id="chart-guilds"></div>
                 </div>
                 <div class="chart-panel" id="panel-stability">
                     <h3 class="chart-title">Community Stability</h3>
-                    <p class="chart-description">Year-to-year Bray-Curtis turnover averages <strong>40%</strong> (range: 16-78%), indicating moderate community change. Highest turnover occurred 2013→2014 and 2019→2020. Community coefficient of variation = 0.63, suggesting dynamic but persistent assemblage structure.</p>
+                    <p class="chart-description">Bray–Curtis differences between consecutive annual seine catches. This describes catch composition, not a test of causes or ecosystem health.</p>
                     <div class="chart-area" id="chart-stability"></div>
                 </div>
             </div>
@@ -1664,23 +1666,23 @@
             <div class="findings-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
                 <div class="finding-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--marsh-light);">
                     <h4 style="color: var(--marsh-light); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Habitat Effect</h4>
-                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">1.7x Higher</p>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Fish density in tidal creeks vs main channel (p = 0.0016)</p>
+                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Habitat comparison</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Compare annual location means; repeated locations limit independent-sample inference.</p>
                 </div>
                 <div class="finding-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--ocean);">
                     <h4 style="color: var(--ocean-light); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Community Stability</h4>
-                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">40% Turnover</p>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Mean annual Bray-Curtis dissimilarity indicates moderate change</p>
+                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Annual turnover</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Descriptive Bray–Curtis dissimilarity of annual catches</p>
                 </div>
                 <div class="finding-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--sand);">
                     <h4 style="color: var(--sand); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Nursery Function</h4>
-                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">59% Marine</p>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Proportion of fish using marsh as nursery habitat</p>
+                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Not estimated</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Catch identity alone cannot establish juvenile nursery use.</p>
                 </div>
                 <div class="finding-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--coral);">
                     <h4 style="color: var(--coral); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Dominance</h4>
-                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">46% Topsmelt</p>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Single species dominates; top 5 species = 96% of catch</p>
+                    <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Seine catch dominance</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Calculated from positive seine catches; enclosure catches are separate.</p>
                 </div>
             </div>
 
@@ -1707,7 +1709,7 @@
                     <span class="section-number" style="color: var(--sand);">About This Project</span>
                     <h2 class="section-title" style="color: var(--white); margin-bottom: 1.5rem;">Why We Built This</h2>
                     <p style="color: rgba(255,255,255,0.85); line-height: 1.9; margin-bottom: 1.5rem;">
-                        This observatory was created by <strong>Adrian Stier</strong> and students in the <strong>Ocean Recoveries Lab</strong> at UC Santa Barbara to make 13 years of SONGS monitoring data accessible for teaching, research, and public engagement.
+                        This observatory was created by <strong>Adrian Stier</strong> and students in the <strong>Ocean Recoveries Lab</strong> at UC Santa Barbara to make 14 years of SONGS monitoring data accessible for teaching, research, and public engagement.
                     </p>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.5rem;">
                         The data were collected by the UCSB Marine Science Institute as part of the San Onofre Nuclear Generating Station mitigation monitoring program. We wanted to transform these valuable long-term observations into an interactive resource that anyone—from undergraduate students to curious community members—can explore.
@@ -1728,7 +1730,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
                                 <span>Ocean Recoveries Lab</span>
                             </a>
-                            <a href="https://github.com/adrianstier/carpinteria-salt-marsh-fishes" target="_blank" style="color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 6px; transition: background 0.2s;">
+                            <a href="https://github.com/adrianstier/sbc-2012-carpinteria-salt-marsh-fish" target="_blank" style="color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 6px; transition: background 0.2s;">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
                                 <span>View Source on GitHub</span>
                             </a>
@@ -1775,8 +1777,8 @@
                 <div class="footer-links">
                     <h4>Data Sources</h4>
                     <ul>
-                        <li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.647.8" target="_blank">EDI Repository (Seine)</a></li>
-                        <li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.8" target="_blank">EDI Repository (Enclosure)</a></li>
+                        <li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.647.9" target="_blank">EDI Repository (Seine)</a></li>
+                        <li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.9" target="_blank">EDI Repository (Annual Summaries)</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -1788,7 +1790,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>v1.0 · Last updated January 2026</span>
+                <span>v1.0 · Last updated October 2026</span>
                 <span>Developed by <a href="https://oceanrecoveries.com" target="_blank">Adrian Stier</a> · Ocean Recoveries Lab</span>
             </div>
         </div>
@@ -1802,8 +1804,8 @@
     <script>
         // Console easter egg for curious developers
         console.log('%c🐟 Carpinteria Salt Marsh Fish Observatory', 'font-size: 16px; font-weight: bold; color: #2d6a4f;');
-        console.log('%cThanks for inspecting! 13 years of fish data, visualized with D3.js.', 'color: #666;');
-        console.log('%cData: https://portal.edirepository.org/nis/mapbrowse?packageid=edi.647.8', 'color: #3d7ab3;');
+        console.log('%cThanks for inspecting! 14 years of fish data, visualized with D3.js.', 'color: #666;');
+        console.log('%cData: https://portal.edirepository.org/nis/mapbrowse?packageid=edi.647.9', 'color: #3d7ab3;');
         console.log('%cQuestions? stier@ucsb.edu | https://oceanrecoveries.com', 'color: #666;');
 
         let DATA = null;
@@ -1826,9 +1828,9 @@
             "POMY": { common: "Specklefin Midshipman", scientific: "Porichthys myriaster", iconType: "midshipman", guild: "Marine Migrant", photo: "assets/fish/midshipman.jpg" },
             "GOFA": { common: "Gobiidae (unid.)", scientific: "Gobiidae sp.", iconType: "goby", guild: "Resident Specialist", photo: "assets/fish/arrow_goby.jpg" },
             "LEAR": { common: "Staghorn Sculpin", scientific: "Leptocottus armatus", iconType: "sculpin", guild: "Marine Migrant", photo: "assets/fish/sculpin.jpg" },
-            "PACA": { common: "California Halibut", scientific: "Paralichthys californicus", iconType: "flatfish", guild: "Nursery User", photo: "assets/fish/halibut.jpg" },
+            "PACA": { common: "California Halibut", scientific: "Paralichthys californicus", iconType: "flatfish", guild: "Coastal Visitor", photo: "assets/fish/halibut.jpg" },
             "GIMI": { common: "Longjaw Mudsucker", scientific: "Gillichthys mirabilis", iconType: "goby", guild: "Resident Specialist", photo: "assets/fish/mudsucker.jpg" },
-            "PAMA": { common: "Spotted Sand Bass", scientific: "Paralabrax maculatofasciatus", iconType: "fish", guild: "Nursery User", photo: "assets/fish/sand_bass.jpg" },
+            "PAMA": { common: "Spotted Sand Bass", scientific: "Paralabrax maculatofasciatus", iconType: "fish", guild: "Coastal Visitor", photo: "assets/fish/sand_bass.jpg" },
             "ACFV": { common: "Yellowfin Goby", scientific: "Acanthogobius flavimanus", iconType: "goby", guild: "Occasional Visitor", photo: "assets/fish/yellowfin_goby.jpg" },
             "QUYC": { common: "Shadow Goby", scientific: "Quietula y-cauda", iconType: "goby", guild: "Resident Specialist", photo: "assets/fish/shadow_goby.jpg" },
             "ILGI": { common: "Cheekspot Goby", scientific: "Ilypnus gilberti", iconType: "goby", guild: "Resident Specialist", photo: "assets/fish/cheekspot_goby.jpg" },
@@ -1843,8 +1845,8 @@
 
         async function loadData() {
             try {
-                const response = await fetch('outputs/dashboard_data.json');
-                DATA = await response.json();
+                DATA = window.CARP_DATA;
+                if (!DATA) throw new Error('Missing outputs/site-data.js; run make all.');
                 initializePage();
             } catch (e) {
                 console.error('Error loading data:', e);
@@ -1876,7 +1878,7 @@
             setTextIfExists('gam-dev', DATA.model_results.gam.deviance_explained + '%');
             setTextIfExists('gam-r2', DATA.model_results.gam.r_squared);
 
-            renderStatsPanel();
+            // Inferential scorecards withheld pending a suitable repeated-measures model.
             renderSpecies();
             renderActiveChart();
         }
@@ -2033,7 +2035,7 @@
                 'Occasional Visitor': '#6a51a3'
             };
             document.getElementById('species-grid').innerHTML = species.map(s => {
-                const info = SPECIES_INFO[s.species_code] || { common: s.species_code, scientific: s.species_name, iconType: 'fish', guild: 'Unknown', photo: null };
+                const info = SPECIES_INFO[s.species_code] || { common: s.species_code, scientific: [s.genus_name, s.species_name].filter(Boolean).join(" "), iconType: 'fish', guild: 'Unknown', photo: null };
                 const guildColor = guildColors[info.guild] || '#666';
                 const iconSvg = getFishIcon(info.iconType);
                 const headerContent = info.photo

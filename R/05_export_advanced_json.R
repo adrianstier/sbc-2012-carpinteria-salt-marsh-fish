@@ -85,6 +85,9 @@ dashboard_data$meta$advanced_analyses <- c(
   "rank_abundance",
   "nursery_function"
 )
+dashboard_data$advanced$seasonality$interpretation <- "Sampling-calendar summary only. Unequal annual survey timing cannot establish seasonal abundance patterns. CPUE denominator is unique location/section/haul events."
+dashboard_data$advanced$nursery <- list(status = "withheld", reason = "Species identity is not juvenile size or age; these data cannot estimate nursery function.")
+dashboard_data$advanced$guilds$interpretation <- "Provisional classifications for a subset of taxa; proportions exclude unassigned taxa and are not proportions of all fish."
 
 # =============================================================================
 # Save updated JSON
@@ -93,6 +96,7 @@ dashboard_data$meta$advanced_analyses <- c(
 # Write with pretty formatting
 json_output <- toJSON(dashboard_data, pretty = TRUE, auto_unbox = TRUE)
 writeLines(json_output, dashboard_file)
+writeLines(json_output, file.path(OUTPUT_DIR, "api", "dashboard_data.json"))
 
 cat(sprintf("  Updated: %s\n", dashboard_file))
 cat(sprintf("  Added %d advanced analysis sections\n",

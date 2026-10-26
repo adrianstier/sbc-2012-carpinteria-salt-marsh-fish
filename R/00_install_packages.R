@@ -1,7 +1,10 @@
 #!/usr/bin/env Rscript
 # Install required packages
 
-packages <- c("tidyverse", "vegan", "Kendall", "lme4", "mgcv", "jsonlite", "here", "broom")
+packages <- c("tidyverse", "vegan", "Kendall", "lme4", "mgcv", "jsonlite", "here", "broom",
+              "digest", "rmarkdown", "scales", "viridis", "knitr", "kableExtra",
+              "ggridges", "patchwork", "plotly", "highcharter", "DT", "crosstalk",
+              "htmltools", "leaflet")
 
 for (pkg in packages) {
   if (!requireNamespace(pkg, quietly = TRUE)) {

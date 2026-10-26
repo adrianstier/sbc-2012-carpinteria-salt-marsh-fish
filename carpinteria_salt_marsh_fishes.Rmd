@@ -1,6 +1,6 @@
 ---
 title: "Fishes of Carpinteria Salt Marsh"
-subtitle: "A 13-Year Perspective on Salt Marsh Fish Community Dynamics"
+subtitle: "Annual monitoring, 2012–2025"
 author: "Biology of Fishes Course"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output:
@@ -144,7 +144,7 @@ Salt marshes provide essential ecosystem services:
 
 ### Data Source
 
-This report analyzes data from the **SONGS (San Onofre Nuclear Generating Station) Mitigation Monitoring Program** collected by UC Santa Barbara's Marine Science Institute from **2012-2024**. The monitoring uses two complementary sampling methods:
+This report analyzes data from the **SONGS (San Onofre Nuclear Generating Station) Mitigation Monitoring Program** collected by UC Santa Barbara's Marine Science Institute from **2012-2025**. The monitoring uses two complementary sampling methods:
 
 1. **Enclosure traps** (0.43 m²) - targeting small benthic gobies
 2. **Beach seines** (~100 m²) - capturing larger mobile fishes
@@ -172,7 +172,7 @@ Living in a salt marsh presents extreme physiological challenges. Understanding 
 Salt marsh fishes face some of the most demanding conditions in the marine environment:
 
 **Temperature Extremes**
-Water temperature can swing **15-32°C (59-90°F) twice daily** with tidal cycles. During low tide, shallow pools heat rapidly under the sun, then cool dramatically when oceanic water floods back in. Few marine fishes can tolerate such rapid temperature changes.
+Shallow pools can warm during low tide; incoming ocean water changes their temperature. The monitoring tables used here do not measure a twice-daily temperature range.
 
 **Oxygen Depletion**
 Warm water holds less dissolved oxygen than cold water. Combined with the high biological oxygen demand from decomposing organic matter, salt marsh waters frequently become hypoxic (low oxygen), especially at night when photosynthesis stops but respiration continues.
@@ -196,20 +196,20 @@ Goby pelvic fins are fused into a **sucking disc** that allows them to cling to 
 Several goby species, especially the **Longjaw Mudsucker** (*Gillichthys mirabilis*), can survive out of water for extended periods. They accomplish this through a **capillary network in the roof of their mouth** that allows gas exchange with air—essentially breathing through their mouth lining!
 
 **Burrowing Behavior**
-Mudsuckers don't dig their own burrows—they're "cheaters" that move into abandoned burrows dug by ghost shrimp and crabs. Males will even suck crabs right out of their burrows to take over the space! These burrows provide refuge from predators and temperature extremes.
+Small benthic fishes use burrows and other bottom refuges. Arrow gobies can occupy shrimp burrows. Do not assume that every goby uses the same refuge or escapes a seine in the same way.
 
 ### Flatfish Transformations
 
 Flatfishes like **California Halibut** undergo one of the most remarkable transformations in the fish world:
 
 **Eye Migration**
-Flatfish larvae start life as normal-looking fish with eyes on both sides of their head. As they develop, one eye physically migrates across the skull to join the other eye on what becomes the "top" side. In halibut, this creates "left-eyed" and "right-eyed" individuals—their "handedness" is determined during development.
+Flatfish larvae start life as bilaterally symmetric larvae with an eye on each side of the head. As they develop, one eye physically migrates across the skull to join the other eye on what becomes the "top" side. In halibut, this creates "left-eyed" and "right-eyed" individuals—their "handedness" is determined during development.
 
 **Master Camouflage**
 Flatfish can rapidly change their skin color and pattern to match the substrate below them. They achieve near-perfect camouflage by using specialized pigment cells (chromatophores) that expand or contract to create different colors and patterns.
 
 **Counter-Shading**
-Like many fishes, flatfish display counter-shading—dark on top (to blend with the bottom when viewed from above) and light on the bottom (to blend with the bright surface when viewed from below). This provides protection throughout the water column.
+The pigmented, eyed side faces away from the substrate; the blind side rests against it. This is not the same orientation as the dorsal and ventral surfaces of an upright fish.
 
 ## Nursery Function
 
@@ -218,18 +218,18 @@ Like many fishes, flatfish display counter-shading—dark on top (to blend with 
 Salt marshes serve as essential **nursery habitat** for many commercially and ecologically important species:
 
 **California Halibut** (*Paralichthys californicus*)
-Juvenile halibut spend their first 1-2 years in shallow estuarine habitats before moving offshore as adults. The marsh provides abundant food (small fishes, shrimp) and protection from larger predators. Without healthy salt marshes, halibut populations would decline.
+Juvenile California halibut use shallow coastal and embayment habitats. A catch record establishes occurrence, not the age of a fish or its contribution to the adult population. These tables do not provide the size or age data needed to quantify nursery function.
 
 **Leopard Sharks & Round Stingrays**
-Female leopard sharks and round stingrays enter salt marshes specifically to give birth in warm, protected waters. The warm temperatures accelerate embryonic development, and the shallow habitat excludes larger sharks that might prey on newborns.
+Sharks and rays can use shallow estuaries for feeding and reproduction. Their presence alone does not establish that they gave birth at the sampling site.
 
 ## Conservation Context
 
 ### A Vanishing Ecosystem
 
-> **Only 3% of California's original coastal wetlands remain intact.**
+California has lost extensive coastal wetland habitat. Estimates depend on the region and on what counts as intact habitat.
 
-Since European settlement, over 90% of California's tidal wetlands have been destroyed by:
+Major causes of wetland loss and alteration include:
 - Agricultural conversion
 - Urban development
 - Port and marina construction
@@ -256,7 +256,7 @@ No sampling method captures all fishes equally. Understanding gear biases is ess
 **Beach Seine Limitations**
 - Fast-swimming fishes can **outswim** the net
 - Some species **jump over** the net when cornered
-- Burrowing fishes (like mudsuckers in their burrows) are **missed entirely**
+- Burrows and other refuges can reduce capture probability
 - Rare or cryptic species may avoid capture
 
 **Enclosure Trap Limitations**
@@ -274,13 +274,14 @@ Scientists increasingly use **environmental DNA (eDNA)** as a complementary appr
 ```{r load-data}
 # Load the datasets
 # Performance standard data (summarized annual estimates)
-ps_data <- read_csv("edi.648.8/wetland_ps_fish_abundance_and_richness-2025-08-27_14-22-49.csv")
+source(here::here("R", "source_data.R"))
+ps_data <- read_songs("performance")
 
 # Raw enclosure trap data (gobies)
-enclosure_data <- read_csv("edi.647.8/wetland_ts_fish_enclosure-2025-08-27_14-40-54.csv")
+enclosure_data <- read_songs("enclosure")
 
 # Raw beach seine data (larger fishes)
-seine_data <- read_csv("edi.647.8/wetland_ts_fish_seine-2025-08-27_14-42-14.csv")
+seine_data <- read_songs("seine")
 ```
 
 ```{r filter-csm}
@@ -378,7 +379,7 @@ common_names <- tribble(
  "SASA", "Pacific Sardine", "Clupeidae",
  # Flatfishes (Pleuronectiformes)
  "HYGU", "Diamond Turbot", "Pleuronectidae",
- "PACA", "California Flounder", "Paralichthyidae",
+ "PACA", "California Halibut", "Paralichthyidae",
  "PLCO", "C-O Sole", "Pleuronectidae",
  "PLRI", "Spotted Turbot", "Pleuronectidae",
  "SYAT", "California Tonguefish", "Cynoglossidae",
@@ -444,12 +445,12 @@ species_table <- all_species %>%
 n_species <- nrow(species_table)
 ```
 
-### Total Species Richness: **`r n_species` species recorded**
+### Recorded Taxa (Including Unresolved Identifications): **`r n_species` taxon entries recorded**
 
 ```{r species-table-interactive}
 # Interactive searchable species table
 datatable(species_table,
-         caption = "Fish Species Recorded at Carpinteria Salt Marsh (2012-2024) - Click columns to sort, use search box to filter",
+         caption = "Fish Species Recorded at Carpinteria Salt Marsh (2012-2025) - Click columns to sort, use search box to filter",
          filter = 'top',
          options = list(
            pageLength = 10,
@@ -537,7 +538,7 @@ highchart() %>%
    style = list(fontSize = "16px", fontWeight = "600")
  ) %>%
  hc_subtitle(
-   text = "Enclosure trap sampling, Carpinteria Salt Marsh (2012–2024)",
+   text = "Enclosure trap sampling, Carpinteria Salt Marsh (2012–2025)",
    style = list(fontSize = "12px", color = "#666666")
  ) %>%
  hc_xAxis(
@@ -576,7 +577,7 @@ highchart() %>%
  hc_credits(enabled = FALSE)
 ```
 
-> **Key Finding:** The **Arrow Goby** (*Clevelandia ios*) is by far the most abundant fish in the salt marsh, followed by the Cheekspot Goby and Shadow Goby. These small gobies are specialists of soft-bottom estuarine habitats.
+> **Enclosure catches:** Arrow goby has the largest named-species total. Many gobies were not identified to species; shadow and cheekspot gobies also occurred. These are trap catches, not a census of all marsh fishes.
 
 ### Beach Seine Catches (Larger Fishes) - Interactive
 
@@ -593,7 +594,7 @@ highchart() %>%
    style = list(fontSize = "16px", fontWeight = "600")
  ) %>%
  hc_subtitle(
-   text = "Area proportional to total abundance (2012–2024)",
+   text = "Area proportional to total abundance (2012–2025)",
    style = list(fontSize = "12px", color = "#666666")
  ) %>%
  hc_add_series(
@@ -660,7 +661,7 @@ habitat_summary <- csm_ps %>%
 ```{r habitat-density-interactive}
 # Interactive time series with Plotly - Publication Quality
 p_density <- habitat_summary %>%
- ggplot(aes(x = year, y = mean_density, color = habitat,
+ ggplot(aes(x = year, y = mean_density, color = habitat, group = habitat,
             text = paste0("Year: ", year,
                          "<br>Habitat: ", habitat,
                          "<br>Mean Density: ", round(mean_density, 2), " fish/m²",
@@ -673,11 +674,11 @@ p_density <- habitat_summary %>%
  geom_point(size = 3) +
  scale_color_manual(values = c("Main Channel" = "#2171b5", "Tidal Creek" = "#cb181d")) +
  scale_fill_manual(values = c("Main Channel" = "#2171b5", "Tidal Creek" = "#cb181d")) +
- scale_x_continuous(breaks = seq(2012, 2024, 2)) +
+ scale_x_continuous(breaks = seq(2012, 2025, 2)) +
  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
  labs(
    title = "Fish Density by Habitat Type",
-   subtitle = "Mean ± SE, Carpinteria Salt Marsh (2012–2024)",
+   subtitle = "Mean ± SE, Carpinteria Salt Marsh (2012–2025)",
    x = "Year",
    y = expression(paste("Fish Density (individuals/m"^2, ")")),
    color = "Habitat",
@@ -698,7 +699,9 @@ p_density <- habitat_summary %>%
 ggplotly(p_density, tooltip = "text") %>%
  layout(
    hoverlabel = list(bgcolor = "white", font = list(size = 12)),
-   legend = list(orientation = "h", y = 1.1, x = 0.5, xanchor = "center")
+   title = list(text = ""),
+   margin = list(t = 20, b = 90),
+   legend = list(orientation = "h", y = -0.2, x = 0.5, xanchor = "center")
  )
 ```
 
@@ -713,7 +716,7 @@ highchart() %>%
    style = list(fontSize = "16px", fontWeight = "600")
  ) %>%
  hc_subtitle(
-   text = "Mean number of species per sample (2012–2024)",
+   text = "Mean number of species per sample (2012–2025)",
    style = list(fontSize = "12px", color = "#666666")
  ) %>%
  hc_xAxis(
@@ -776,7 +779,7 @@ habitat_overall <- csm_ps %>%
  )
 
 datatable(habitat_overall,
-         caption = "Summary Statistics by Habitat Type (2012-2024)",
+         caption = "Summary Statistics by Habitat Type (2012-2025)",
          options = list(dom = 't'),
          class = 'cell-border stripe') %>%
  formatStyle(
@@ -821,7 +824,7 @@ highchart() %>%
    style = list(fontSize = "16px", fontWeight = "600")
  ) %>%
  hc_subtitle(
-   text = "Carpinteria Salt Marsh (2012–2024)",
+   text = "Carpinteria Salt Marsh (2012–2025)",
    style = list(fontSize = "12px", color = "#666666")
  ) %>%
  hc_xAxis(
@@ -885,7 +888,7 @@ highchart() %>%
 ```{r density-boxplot-interactive}
 # Interactive boxplots by year - Publication Quality
 # Use a sequential blue palette
-year_colors <- colorRampPalette(c("#c6dbef", "#08519c"))(13)
+year_colors <- colorRampPalette(c("#c6dbef", "#08519c"))(n_distinct(csm_ps$year))
 
 csm_ps %>%
  plot_ly(x = ~factor(year), y = ~count_per_m2, type = "box",
@@ -995,7 +998,7 @@ The most abundant fishes in the salt marsh are small, bottom-dwelling gobies.
 ### Arrow Goby
 <div class="species-card">
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/450503585/medium.jpeg" alt="Arrow Goby" style="width:100%; max-width:400px; border-radius:8px;">
-<p><strong>*Clevelandia ios*</strong> - The most abundant fish in the marsh. Lives in burrows made by ghost shrimp.</p>
+<p><strong>*Clevelandia ios*</strong> - Numerically dominant in the enclosure catches. Lives in burrows made by ghost shrimp.</p>
 <a href="https://www.inaturalist.org/taxa/117564" target="_blank">View on iNaturalist</a>
 </div>
 
@@ -1034,7 +1037,7 @@ Surface-dwelling schooling fishes that are important prey for larger predators.
 ### California Killifish
 <div class="species-card">
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/91329082/medium.jpg" alt="California Killifish" style="width:100%; max-width:400px; border-radius:8px;">
-<p><strong>*Fundulus parvipinnis*</strong> - Endemic to California. Tolerates extreme salinity changes.</p>
+<p><strong>*Fundulus parvipinnis*</strong> - Occurs in California and Baja California estuaries; tolerates variable salinity.</p>
 <a href="https://www.inaturalist.org/taxa/179533" target="_blank">View on iNaturalist</a>
 </div>
 
@@ -1045,7 +1048,7 @@ Masters of camouflage that live on the bottom.
 ### California Halibut
 <div class="species-card">
 <img src="https://static.inaturalist.org/photos/66857424/medium.jpg" alt="California Halibut" style="width:100%; max-width:400px; border-radius:8px;">
-<p><strong>*Paralichthys californicus*</strong> - An important commercial and recreational species. Juveniles spend 1-2 years in salt marsh nursery habitat. A "left-eyed" flatfish whose eye migrates during development.</p>
+<p><strong>*Paralichthys californicus*</strong> - An important commercial and recreational species. Juveniles use shallow coastal and embayment habitats. Individuals may have eyes on either side after metamorphosis.</p>
 <a href="https://www.inaturalist.org/taxa/108561" target="_blank">View on iNaturalist</a>
 </div>
 
@@ -1058,12 +1061,12 @@ Masters of camouflage that live on the bottom.
 
 ## Sharks & Rays {.tabset}
 
-Yes, sharks and rays visit salt marshes! They come to hunt and give birth in the protected waters.
+Yes, sharks and rays visit salt marshes! Their occurrence does not establish that reproduction took place at this site.
 
 ### Leopard Shark
 <div class="species-card">
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/520058171/medium.jpg" alt="Leopard Shark" style="width:100%; max-width:400px; border-radius:8px;">
-<p><strong>*Triakis semifasciata*</strong> - Harmless to humans. Females visit warm, shallow estuaries specifically to give birth—the warm water accelerates embryo development and excludes larger predators.</p>
+<p><strong>*Triakis semifasciata*</strong> - Harmless to humans. Uses shallow coastal and estuarine habitats. A catch does not establish that reproduction occurred at this site.</p>
 <a href="https://www.inaturalist.org/taxa/52297" target="_blank">View on iNaturalist</a>
 </div>
 
@@ -1077,7 +1080,7 @@ Yes, sharks and rays visit salt marshes! They come to hunt and give birth in the
 ### Thornback Guitarfish
 <div class="species-card">
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/10358915/medium.jpg" alt="Thornback Guitarfish" style="width:100%; max-width:400px; border-radius:8px;">
-<p><strong>*Platyrhinoidis triseriata*</strong> - Half shark, half ray! A unique California endemic.</p>
+<p><strong>*Platyrhinoidis triseriata*</strong> - A ray with an elongated body and broad pectoral disc.</p>
 <a href="https://www.inaturalist.org/taxa/48401" target="_blank">View on iNaturalist</a>
 </div>
 
@@ -1093,7 +1096,7 @@ Yes, sharks and rays visit salt marshes! They come to hunt and give birth in the
 ### Pacific Staghorn Sculpin
 <div class="species-card">
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/98659064/medium.jpeg" alt="Pacific Staghorn Sculpin" style="width:100%; max-width:400px; border-radius:8px;">
-<p><strong>*Leptocottus armatus*</strong> - Has venomous spines on its gill covers. Handle with care!</p>
+<p><strong>*Leptocottus armatus*</strong> - Has sharp spines on its gill covers. Let trained staff handle unfamiliar fish.</p>
 <a href="https://www.inaturalist.org/taxa/49163" target="_blank">View on iNaturalist</a>
 </div>
 
@@ -1181,7 +1184,7 @@ highchart() %>%
    style = list(fontSize = "16px", fontWeight = "600")
  ) %>%
  hc_subtitle(
-   text = "Total count by habitat (2012–2024)",
+   text = "Total count by habitat (2012–2025)",
    style = list(fontSize = "12px", color = "#666666")
  ) %>%
  hc_xAxis(
@@ -1339,7 +1342,7 @@ highchart() %>%
 
 # Ecological Guilds
 
-Fish species can be grouped into **ecological guilds** based on their habitat use and life history strategies.
+Fish species can be grouped into **ecological guilds** based on their habitat use and life history strategies. The provisional assignments below cover only a subset of taxa; unassigned catches are excluded from the denominator. A marine migrant is not necessarily a juvenile or a nursery user.
 
 ```{r guilds}
 # Assign guilds to key species
@@ -1378,7 +1381,7 @@ highchart() %>%
    style = list(fontSize = "16px", fontWeight = "600")
  ) %>%
  hc_subtitle(
-   text = "Proportion of resident vs marine migrant species (2012–2024)",
+   text = "Catch proportions among assigned resident and migrant taxa (2012–2025)",
    style = list(fontSize = "12px", color = "#666666")
  ) %>%
  hc_xAxis(
@@ -1475,6 +1478,7 @@ all_species_counts <- bind_rows(
 ) %>%
  group_by(species_code) %>%
  summarize(total = sum(total), .groups = "drop") %>%
+ filter(total > 0) %>%
  left_join(common_names, by = "species_code") %>%
  mutate(
    category = case_when(
@@ -1554,15 +1558,15 @@ highchart() %>%
 
 ## What We've Learned About Carpinteria Salt Marsh Fishes
 
-1. **High Diversity:** At least **`r n_species` fish species** use Carpinteria Salt Marsh, from tiny gobies to large elasmobranchs
+1. **High Diversity:** **`r n_species` taxon entries with positive catches** were recorded at Carpinteria Salt Marsh; these include unresolved identifications, from tiny gobies to large elasmobranchs
 
-2. **Goby Dominance:** Small benthic gobies, especially the **Arrow Goby**, numerically dominate the fish community
+2. **Enclosure Catches:** Arrow goby is the most numerous named species in enclosure catches. Seine and enclosure totals cannot be compared as whole-marsh abundances.
 
 3. **Habitat Partitioning:** Tidal creeks and main channels support different fish densities and compositions
 
-4. **Temporal Variability:** Fish populations fluctuate dramatically between years, likely driven by environmental conditions and recruitment
+4. **Temporal Variability:** Estimated density and catch composition differ among years. These summaries do not identify environmental causes.
 
-5. **Estuarine Specialists:** The community is dominated by resident species highly adapted to fluctuating estuarine conditions
+5. **Estuarine Specialists:** Resident and visiting fishes are both represented; catch proportions depend on the sampling method
 
 ## Discussion Questions
 
@@ -1576,7 +1580,18 @@ highchart() %>%
 
 ---
 
+# Interpretation and Data Revision
+
+This update uses EDI packages **edi.647.9** and **edi.648.9**. Authenticated EDI revision-list checks on 26 October 2026 confirmed these are the latest available revisions; remote EML matches the cached metadata. The original files are read from the shared catalogue cache; hashes, schema checks and the verification timestamp are recorded in `data/metadata/current_sources.json`. Historical revision-8 files remain unchanged.
+
+The performance table contains annual location summaries, combining method-specific estimates under the published protocol. Repeated samples of the same location are not independent replicates. Raw seine and enclosure catches must remain separate when comparing abundance. Summed catch is not a whole-marsh population estimate.
+
+Taxon inventories contain unresolved family or genus identifications as well as named species. A sampling-month comparison is not evidence of seasonality because the annual survey calendar is uneven. Catch identity alone does not establish juvenile nursery use. The separate dashboard’s legacy Gaussian models are exploratory and have residual and dependence problems; they are not validated inferential results.
+
 # References & Further Reading
+
+- SONGS wetland fish survey, EDI revision 9 (2026): [data and metadata](https://doi.org/10.6073/pasta/57c6811e9ded961fbd5bdfaa074d6d9f).
+- SONGS annual wetland fish abundance and richness, EDI revision 9 (2026): [data and metadata](https://doi.org/10.6073/pasta/fd7423338030a23118de2d5c1ff2aa5e).
 
 - Allen, L.G., M.H. Horn, F.A. Edmands II, and C.A. Usui. 1983. Structure and seasonal dynamics of the fish assemblage in the Cabrillo Beach area of Los Angeles Harbor, California. *Bulletin of the Southern California Academy of Sciences* 82:47-70.
 

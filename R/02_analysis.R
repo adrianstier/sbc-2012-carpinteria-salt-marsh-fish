@@ -15,7 +15,7 @@ suppressPackageStartupMessages({
 })
 
 # Configuration
-DATA_DIR <- here::here("data", "raw")
+source(here::here("R", "source_data.R"))
 OUTPUT_DIR <- here::here("outputs")
 dir.create(OUTPUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
@@ -26,24 +26,15 @@ dir.create(OUTPUT_DIR, recursive = TRUE, showWarnings = FALSE)
 cat("=== Loading Data ===\n")
 
 # Performance standard data (annual summaries)
-ps_data <- read_csv(
-  file.path(DATA_DIR, "edi.648.8", "wetland_ps_fish_abundance_and_richness.csv"),
-  show_col_types = FALSE
-) %>%
+ps_data <- read_songs("performance") %>%
   filter(wetland_code == "CSM")  # Carpinteria Salt Marsh only
 
 # Enclosure trap data (gobies)
-enclosure_data <- read_csv(
-  file.path(DATA_DIR, "edi.647.8", "wetland_ts_fish_enclosure.csv"),
-  show_col_types = FALSE
-) %>%
+enclosure_data <- read_songs("enclosure") %>%
   filter(wetland_code == "CSM")
 
 # Beach seine data (larger fishes)
-seine_data <- read_csv(
-  file.path(DATA_DIR, "edi.647.8", "wetland_ts_fish_seine.csv"),
-  show_col_types = FALSE
-) %>%
+seine_data <- read_songs("seine") %>%
   filter(wetland_code == "CSM")
 
 cat(sprintf("  Performance data: %d records\n", nrow(ps_data)))
@@ -152,7 +143,7 @@ temporal_trends <- list(
     p_value = mk_density$sl,
     trend = ifelse(mk_density$sl < 0.05,
                    ifelse(mk_density$tau > 0, "increasing", "decreasing"),
-                   "stable")
+                   "no detected monotonic trend")
   )
 )
 
@@ -212,6 +203,7 @@ seine_matrix <- seine_data %>%
   as.matrix()
 
 # Species accumulation curve
+set.seed(42)
 spec_accum <- specaccum(seine_matrix, method = "random", permutations = 100)
 
 accumulation_curve <- list(
@@ -301,7 +293,7 @@ glm_results <- list(
   formula = "density ~ habitat + year",
   coefficients = list(
     intercept = coef(glm_model)[1],
-    habitat_main_channel = coef(glm_model)[2],
+    habitat_tidal_creek = coef(glm_model)[2],
     year = coef(glm_model)[3]
   ),
   p_values = list(
@@ -385,7 +377,8 @@ if (n_locations > 3) {
   names(random_intercepts)[1] <- "intercept"
 
   # Calculate confidence intervals for random effects
-  re_se <- sqrt(var_comp$vcov[1])  # Standard error from location variance
+  # Conditional uncertainty in each BLUP, not the population SD of locations.
+  re_se <- sqrt(attr(ranef(lmer_model, condVar = TRUE)$location, "postVar")[1, 1, ])
   random_intercepts$lower <- random_intercepts$intercept - 1.96 * re_se
   random_intercepts$upper <- random_intercepts$intercept + 1.96 * re_se
 
@@ -430,7 +423,7 @@ cat("\n=== Preparing Chart Data ===\n")
 # Species abundance for bar chart
 species_abundance <- seine_data %>%
   filter(count > 0) %>%
-  group_by(species_code, species_name) %>%
+  group_by(species_code, genus_name, species_name) %>%
   summarize(count = sum(count), .groups = "drop") %>%
   arrange(desc(count)) %>%
   head(15)
@@ -487,10 +480,14 @@ analysis_results <- list(
   summary = list(
     years_of_data = n_distinct(ps_data$year),
     year_range = range(ps_data$year),
-    total_species = n_distinct(c(enclosure_data$species_code, seine_data$species_code)),
-    total_samples = n_distinct(paste(ps_data$year, ps_data$date, ps_data$tc_mc_code)),
+    # Taxon codes include unresolved family/genus identifications; not all are species.
+    total_species = n_distinct(c(enclosure_data$species_code[enclosure_data$count > 0], seine_data$species_code[seine_data$count > 0])),
+    total_samples = n_distinct(paste(ps_data$year, ps_data$tc_mc_code)),
     enclosure_records = nrow(enclosure_data),
-    seine_records = nrow(seine_data)
+    seine_records = nrow(seine_data),
+    mean_density = mean(ps_data$count_per_m2),
+    mean_richness = mean(ps_data$species_count),
+    n_locations = n_distinct(ps_data$tc_mc_code)
   ),
 
   model_results = list(
@@ -508,7 +505,11 @@ analysis_results <- list(
   charts = list(
     species_abundance = species_abundance,
     annual_trends = annual_trends,
-    heatmap = heatmap_data
+    heatmap = heatmap_data,
+    location_summaries = model_data %>% transmute(
+      year, site = location, habitat = as.character(habitat),
+      density = count_per_m2, richness = species_count
+    )
   )
 )
 

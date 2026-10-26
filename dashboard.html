@@ -659,14 +659,17 @@
             display: inline-block;
         }
     </style>
+<script src="outputs/site-data.js"></script>
+<meta name="carp-data-sha256" content="baf02924ca88074a1c18d99814d3f9428576a0e51f29c4a9852cc2d21153a28b">
 </head>
 <body>
+<aside style="padding:1rem;margin:5rem 1rem 1rem;border:2px solid #789;">Updated 26 October 2026 (authenticated EDI revision check): SONGS revisions edi.647.9 / edi.648.9, 2012–2025. Taxon counts include unresolved identifications. Annual location summaries are repeated measurements, not independent visits. Gaussian model panels are exploratory and should not be used for inference; some fitted densities are negative. Sampling-month summaries do not establish seasonality. Nursery-function estimates have been withdrawn. <a href="carpinteria_salt_marsh_fishes.html">Read the updated guide and methods</a>.</aside>
     <!-- Sidebar Navigation -->
     <nav class="sidebar" role="navigation" aria-label="Main navigation">
         <div class="sidebar-header">
             <div class="sidebar-logo">CSM Observatory</div>
             <div class="sidebar-title">Carpinteria Salt Marsh</div>
-            <div class="sidebar-subtitle">Fish Community Data 2012-2024</div>
+            <div class="sidebar-subtitle">Fish Community Data 2012-2025</div>
         </div>
 
         <div class="nav-section">
@@ -695,7 +698,7 @@
                     <path d="M3 3v18h18"/>
                     <path d="M18 9l-5 5-4-4-6 6"/>
                 </svg>
-                Temporal Trends
+                Monitoring Periods
             </a>
             <a href="#habitat" class="nav-link">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -717,7 +720,7 @@
                     <circle cx="12" cy="12" r="10"/>
                     <path d="M12 2a10 10 0 0 1 0 20"/>
                 </svg>
-                Ecological Guilds
+                Feeding Guilds (Assigned Taxa Only)
             </a>
             <a href="#heatmap" class="nav-link">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -767,7 +770,7 @@
                     </svg>
                     Print
                 </button>
-                <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.8" target="_blank" class="btn btn-primary">
+                <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.648.9" target="_blank" class="btn btn-primary">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                     </svg>
@@ -784,8 +787,8 @@
                 <div class="summary-grid">
                     <div class="summary-card ocean">
                         <div class="summary-label">Years of Data</div>
-                        <div class="summary-value">13</div>
-                        <div class="summary-unit">2012 - 2024</div>
+                        <div class="summary-value">14</div>
+                        <div class="summary-unit">2012 - 2025</div>
                         <div class="summary-trend up">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 19V5M5 12l7-7 7 7"/>
@@ -794,30 +797,30 @@
                         </div>
                     </div>
                     <div class="summary-card coral">
-                        <div class="summary-label">Total Species</div>
-                        <div class="summary-value">42</div>
+                        <div class="summary-label">Recorded Taxa</div>
+                        <div class="summary-value">43</div>
                         <div class="summary-unit">Unique taxa recorded</div>
                         <div class="summary-trend up">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 19V5M5 12l7-7 7 7"/>
                             </svg>
-                            12 fish families
+                            Includes unresolved identifications
                         </div>
                     </div>
                     <div class="summary-card kelp">
                         <div class="summary-label">Mean Density</div>
-                        <div class="summary-value">8.4</div>
+                        <div class="summary-value">24.6</div>
                         <div class="summary-unit">fish per m2</div>
                         <div class="summary-trend up">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 19V5M5 12l7-7 7 7"/>
                             </svg>
-                            +12% from baseline
+                            Mean across annual location estimates
                         </div>
                     </div>
                     <div class="summary-card amber">
-                        <div class="summary-label">Sampling Events</div>
-                        <div class="summary-value">156</div>
+                        <div class="summary-label">Annual Location Summaries</div>
+                        <div class="summary-value">168</div>
                         <div class="summary-unit">Location-year combinations</div>
                         <div class="summary-trend up">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -833,7 +836,7 @@
             <section id="insights" class="section" aria-labelledby="insights-title">
                 <div class="section-header">
                     <div>
-                        <h2 id="insights-title" class="section-title">Statistical Model Insights</h2>
+                        <h2 id="insights-title" class="section-title">Descriptive Monitoring Summaries</h2>
                         <p class="section-subtitle">Key findings from comprehensive data analysis</p>
                     </div>
                 </div>
@@ -847,10 +850,10 @@
                                 </svg>
                             </div>
                             <div class="insight-content">
-                                <div class="insight-title">Habitat Effect</div>
-                                <div class="insight-value">+5.26 fish/m<sup>2</sup></div>
+                                <div class="insight-title">Mean Density</div>
+                                <div class="insight-value">24.6 fish/m<sup>2</sup></div>
                                 <div class="insight-detail">Tidal Creek vs Main Channel</div>
-                                <div class="insight-stat">Cohen's d = 1.97 (large effect)</div>
+                                <div class="insight-stat">Repeated annual location summaries</div>
                             </div>
                         </div>
                         <div class="insight-card">
@@ -861,10 +864,10 @@
                                 </svg>
                             </div>
                             <div class="insight-content">
-                                <div class="insight-title">Temporal Trend</div>
-                                <div class="insight-value">+0.08 per year</div>
-                                <div class="insight-detail">Sen's slope estimate</div>
-                                <div class="insight-stat">p = 0.58 (not significant)</div>
+                                <div class="insight-title">Monitoring Period</div>
+                                <div class="insight-value">2012–2025</div>
+                                <div class="insight-detail">Annual monitoring record</div>
+                                <div class="insight-stat">14 surveyed years; not evidence of stability</div>
                             </div>
                         </div>
                         <div class="insight-card">
@@ -877,9 +880,9 @@
                             </div>
                             <div class="insight-content">
                                 <div class="insight-title">Shannon Diversity</div>
-                                <div class="insight-value">H' = 1.71</div>
+                                <div class="insight-value">H′ = 1.35</div>
                                 <div class="insight-detail">Community diversity index</div>
-                                <div class="insight-stat">Evenness J' = 0.67</div>
+                                <div class="insight-stat">Evenness J′ = 0.37</div>
                             </div>
                         </div>
                         <div class="insight-card">
@@ -890,10 +893,10 @@
                                 </svg>
                             </div>
                             <div class="insight-content">
-                                <div class="insight-title">Model Fit</div>
-                                <div class="insight-value">R<sup>2</sup> = 0.51</div>
-                                <div class="insight-detail">Variance explained</div>
-                                <div class="insight-stat">RMSE = 2.60 fish/m<sup>2</sup></div>
+                                <div class="insight-title">Simpson Diversity</div>
+                                <div class="insight-value">D = 0.66</div>
+                                <div class="insight-detail">Pooled seine catches</div>
+                                <div class="insight-stat">38 positive-catch seine taxa</div>
                             </div>
                         </div>
                     </div>
@@ -905,7 +908,7 @@
                 <div class="section-header">
                     <div>
                         <h2 id="abundance-title" class="section-title">Species Abundance</h2>
-                        <p class="section-subtitle">Total individuals captured across all sampling events (2012-2024)</p>
+                        <p class="section-subtitle">Total individuals captured across all sampling events (2012-2025)</p>
                     </div>
                 </div>
                 <div class="section-body">
@@ -914,12 +917,12 @@
                 </div>
             </section>
 
-            <!-- Temporal Trends -->
+            <!-- Monitoring Periods -->
             <section id="trends" class="section" aria-labelledby="trends-title">
                 <div class="section-header">
                     <div>
-                        <h2 id="trends-title" class="section-title">Temporal Trends</h2>
-                        <p class="section-subtitle">Fish density and species richness over 13 years of monitoring</p>
+                        <h2 id="trends-title" class="section-title">Monitoring Periods</h2>
+                        <p class="section-subtitle">Fish density and species richness over 14 years of monitoring</p>
                     </div>
                 </div>
                 <div class="section-body">
@@ -944,11 +947,11 @@
                     </div>
                 </section>
 
-                <!-- Ecological Guilds -->
+                <!-- Feeding Guilds (Assigned Taxa Only) -->
                 <section id="guilds" class="section" aria-labelledby="guilds-title">
                     <div class="section-header">
                         <div>
-                            <h2 id="guilds-title" class="section-title">Ecological Guilds</h2>
+                            <h2 id="guilds-title" class="section-title">Feeding Guilds (Assigned Taxa Only)</h2>
                             <p class="section-subtitle">Functional group composition</p>
                         </div>
                     </div>
@@ -1046,10 +1049,10 @@
                         }
                     },
                     diversityIndices: {
-                        shannon: api.model_results.diversity_indices.shannon,
-                        simpson: api.model_results.diversity_indices.simpson,
-                        evenness: api.model_results.diversity_indices.evenness,
-                        richness: api.model_results.diversity_indices.richness
+                        shannon: api.model_results.diversity.shannon,
+                        simpson: api.model_results.diversity.simpson,
+                        evenness: api.model_results.diversity.evenness,
+                        richness: api.model_results.diversity.richness
                     },
                     temporalTrend: {
                         sensSlope: api.model_results.temporal_trends.density_trend.sens_slope,
@@ -1089,31 +1092,14 @@
                     { metric: "Species Richness", tidalCreek: tc.mean_richness, mainChannel: mc.mean_richness, unit: "species" }
                 ],
 
-                // Ecological guilds (estimated from species composition)
-                guilds: [
-                    { guild: "Resident Specialists", count: 65, color: "#238b45" },
-                    { guild: "Marine Migrants", count: 25, color: "#2171b5" },
-                    { guild: "Nursery Users", count: 7, color: "#fe9929" },
-                    { guild: "Occasional Visitors", count: 3, color: "#6a51a3" }
-                ],
+                // Provisional feeding guilds among assigned taxa only.
+                guilds: api.advanced.guilds.feeding_summary.map((g, i) => ({
+                    guild: g.feeding_guild,
+                    count: +(100 * g.mean_proportion).toFixed(1),
+                    color: d3.schemeTableau10[i]
+                })),
 
-                // Scatter data from annual trends (approximated per habitat)
-                scatterData: api.charts.annual_trends.flatMap(t => [
-                    ...Array(6).fill(null).map((_, i) => ({
-                        year: t.year,
-                        habitat: "Tidal Creek",
-                        density: t.tc_density * (0.8 + Math.random() * 0.4),
-                        richness: t.richness * (0.85 + Math.random() * 0.3),
-                        site: `TC-${i + 1}`
-                    })),
-                    ...Array(6).fill(null).map((_, i) => ({
-                        year: t.year,
-                        habitat: "Main Channel",
-                        density: t.mc_density * (0.8 + Math.random() * 0.4),
-                        richness: t.richness * (0.85 + Math.random() * 0.3),
-                        site: `MC-${i + 1}`
-                    }))
-                ]),
+                scatterData: api.charts.location_summaries,
 
                 // Heatmap data from API
                 heatmapData: (function() {
@@ -1125,7 +1111,7 @@
                             species: info.common,
                             values: years.map(year => {
                                 const found = speciesData.find(d => d.year === year);
-                                return found ? Math.round(found.value * 100) : 0;
+                                return found ? Math.round(found.normalized * 100) : 0;
                             })
                         };
                     });
@@ -1141,9 +1127,8 @@
         // Load data from API
         async function loadData() {
             try {
-                const response = await fetch('outputs/api/dashboard_data.json');
-                if (!response.ok) throw new Error('Failed to load dashboard data');
-                API_DATA = await response.json();
+                API_DATA = window.CARP_DATA;
+                if (!API_DATA) throw new Error('Missing outputs/site-data.js; run make all.');
                 DATA = transformAPIData(API_DATA);
                 updateSummaryCards();
                 updateInsightsPanel();
@@ -1154,7 +1139,7 @@
                 document.querySelector('.content').innerHTML = `
                     <div style="text-align: center; padding: 60px; color: #666;">
                         <h2>Unable to load data</h2>
-                        <p>Run <code>python -m src.export.dashboard_api</code> to generate the data file.</p>
+                        <p>Run <code>make all</code> to rebuild the shared site data.</p>
                         <p style="font-size: 12px; margin-top: 20px;">Error: ${error.message}</p>
                     </div>
                 `;
@@ -1171,7 +1156,7 @@
             const cards = document.querySelectorAll('.summary-card');
             if (cards[0]) {
                 cards[0].querySelector('.summary-value').textContent = s.years_of_data;
-                cards[0].querySelector('.summary-unit').textContent = `${s.year_range[0]} - ${s.year_range[1]}`;
+                cards[0].querySelector('.summary-unit').textContent = `${s.year_range.start} - ${s.year_range.end}`;
             }
             if (cards[1]) {
                 cards[1].querySelector('.summary-value').textContent = s.total_species;
@@ -1194,17 +1179,17 @@
 
             const insightCards = document.querySelectorAll('.insight-card');
 
-            // Habitat Effect
+            // Mean Density
             if (insightCards[0]) {
                 const diff = (m.habitatComparison.tidalCreek.meanDensity - m.habitatComparison.mainChannel.meanDensity).toFixed(1);
-                insightCards[0].querySelector('.insight-value').innerHTML = `+${diff} fish/m<sup>2</sup>`;
-                insightCards[0].querySelector('.insight-stat').textContent = `Cohen's d = ${m.habitatComparison.tTest.cohensD.toFixed(2)} (${m.habitatComparison.tTest.cohensD > 0.8 ? 'large' : m.habitatComparison.tTest.cohensD > 0.5 ? 'medium' : 'small'} effect)`;
+                insightCards[0].querySelector('.insight-value').innerHTML = `${window.CARP_DATA.summary.mean_density.toFixed(1)} fish/m<sup>2</sup>`;
+                insightCards[0].querySelector('.insight-stat').textContent = 'Repeated annual location summaries';
             }
 
-            // Temporal Trend
+            // Monitoring Period
             if (insightCards[1]) {
-                insightCards[1].querySelector('.insight-value').textContent = `${m.temporalTrend.sensSlope > 0 ? '+' : ''}${m.temporalTrend.sensSlope.toFixed(2)} per year`;
-                insightCards[1].querySelector('.insight-stat').textContent = `p = ${m.temporalTrend.pValue.toFixed(2)} (${m.temporalTrend.pValue < 0.05 ? 'significant' : 'not significant'})`;
+                insightCards[1].querySelector('.insight-value').textContent = `${window.CARP_DATA.summary.year_range.start}–${window.CARP_DATA.summary.year_range.end}`;
+                insightCards[1].querySelector('.insight-stat').textContent = '14 surveyed years; not evidence of stability';
             }
 
             // Shannon Diversity
@@ -1217,7 +1202,7 @@
             if (insightCards[3]) {
                 insightCards[3].querySelector('.insight-value').innerHTML = `D = ${m.diversityIndices.simpson.toFixed(2)}`;
                 insightCards[3].querySelector('.insight-detail').textContent = 'Simpson diversity index';
-                insightCards[3].querySelector('.insight-stat').textContent = `${m.diversityIndices.richness} species total`;
+                insightCards[3].querySelector('.insight-stat').textContent = `${m.diversityIndices.richness} positive-catch seine taxa`;
             }
         }
 
@@ -1387,7 +1372,7 @@
         }
 
         // ============================================
-        // CHART: Temporal Trends Line Chart
+        // CHART: Monitoring Periods Line Chart
         // ============================================
         function renderTrendsChart() {
             const container = d3.select("#trends-chart");
@@ -1702,7 +1687,7 @@
         }
 
         // ============================================
-        // CHART: Ecological Guilds Donut
+        // CHART: Feeding Guilds (Assigned Taxa Only) Donut
         // ============================================
         function renderGuildsChart() {
             const container = d3.select("#guilds-chart");
@@ -1769,7 +1754,7 @@
             g.append("text")
                 .attr("class", "donut-center-label")
                 .attr("dy", "1.2em")
-                .text("of catch");
+                .text("assigned taxa only");
 
             // Legend
             const legend = d3.select("#guilds-legend");

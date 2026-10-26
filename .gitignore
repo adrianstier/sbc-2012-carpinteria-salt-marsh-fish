@@ -17,6 +17,8 @@ screenshot*.png
 # OS files
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
 
 # Large data files (stored separately - use EDI links in README)
 edi.647.8/*.csv

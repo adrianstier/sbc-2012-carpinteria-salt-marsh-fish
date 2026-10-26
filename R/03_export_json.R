@@ -28,7 +28,10 @@ dashboard_data <- list(
     source = "R Statistical Analysis",
     generated = format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ"),
     r_version = R.version.string,
-    packages = c("vegan", "Kendall", "lme4", "mgcv")
+    packages = c("vegan", "Kendall", "lme4", "mgcv"),
+    source_packages = c("edi.647.9", "edi.648.9"),
+    interpretation = "Descriptive monitoring update. Legacy Gaussian models and independent-sample tests are exploratory, not validated repeated-measures inference. No causal, seasonal, or nursery-function conclusions.",
+    taxon_note = "Positive-catch taxon codes, including unresolved identifications; not a count of confirmed biological species."
   ),
 
   # -----------------------------------------------------------------------------
@@ -43,7 +46,10 @@ dashboard_data <- list(
     total_species = results$summary$total_species,
     total_samples = results$summary$total_samples,
     enclosure_records = results$summary$enclosure_records,
-    seine_records = results$summary$seine_records
+    seine_records = results$summary$seine_records,
+    mean_density = results$summary$mean_density,
+    mean_richness = results$summary$mean_richness,
+    n_locations = results$summary$n_locations
   ),
 
   # -----------------------------------------------------------------------------
@@ -136,7 +142,9 @@ dashboard_data <- list(
       formula = results$model_results$glm$formula,
       coefficients = list(
         intercept = round(results$model_results$glm$coefficients$intercept, 3),
-        habitat_effect = round(results$model_results$glm$coefficients$habitat_main_channel, 3),
+        habitat_effect = round(results$model_results$glm$coefficients$habitat_tidal_creek, 3),
+        habitat_reference = "Main Channel",
+        habitat_contrast = "Tidal Creek minus Main Channel",
         year_effect = round(results$model_results$glm$coefficients$year, 4)
       ),
       p_values = list(
@@ -203,6 +211,7 @@ dashboard_data <- list(
     species_abundance = lapply(1:nrow(results$charts$species_abundance), function(i) {
       list(
         species_code = results$charts$species_abundance$species_code[i],
+        genus_name = results$charts$species_abundance$genus_name[i],
         species_name = results$charts$species_abundance$species_name[i],
         count = results$charts$species_abundance$count[i]
       )
@@ -212,11 +221,18 @@ dashboard_data <- list(
     annual_trends = lapply(1:nrow(results$charts$annual_trends), function(i) {
       list(
         year = results$charts$annual_trends$year[i],
+        density = round(results$model_results$temporal_trends$annual_density[i], 2),
+        richness = round(results$model_results$temporal_trends$annual_richness[i], 2),
         tc_density = round(results$charts$annual_trends$tc_density[i], 2),
         mc_density = round(results$charts$annual_trends$mc_density[i], 2),
         tc_richness = round(results$charts$annual_trends$tc_richness[i], 2),
         mc_richness = round(results$charts$annual_trends$mc_richness[i], 2)
       )
+    }),
+
+    # Actual annual location estimates, not simulated/jittered points.
+    location_summaries = lapply(seq_len(nrow(results$charts$location_summaries)), function(i) {
+      as.list(results$charts$location_summaries[i, ])
     }),
 
     # Heatmap data (species x year)

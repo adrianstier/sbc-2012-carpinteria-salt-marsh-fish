@@ -1,0 +1,653 @@
+{
+  "checked_date": "2026-10-26",
+  "revision_evidence": "https://marinemitigation.msi.ucsb.edu/data",
+  "authenticated_verification": {
+    "verified_at_utc": "2026-10-26T17:05:56.334518+00:00",
+    "packages": {
+      "edi.647.9": {
+        "revision_url": "https://pasta.lternet.edu/package/eml/edi/647",
+        "available_revisions": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "latest_revision": 9,
+        "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/647/9",
+        "remote_eml_sha256": "315f2abddc755787e84d23a2336b16830050019fea157aa9806b53cbd95b2a8c",
+        "cached_eml_matches": true
+      },
+      "edi.648.9": {
+        "revision_url": "https://pasta.lternet.edu/package/eml/edi/648",
+        "available_revisions": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "latest_revision": 9,
+        "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/648/9",
+        "remote_eml_sha256": "333babfab10f69ed787db95e9834565a600ce4bae981a4686001624a31e9cbb7",
+        "cached_eml_matches": true
+      }
+    }
+  },
+  "verification_limit": "See authenticated_verification for the time of the remote check; local rebuilds do not imply a fresh remote check.",
+  "sources": {
+    "performance": {
+      "package_id": "edi.648.9",
+      "path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/entities/edi.648.9/1_wetland_ps_fish_abundance_and_richness-2026-06-22_15-13-18.csv",
+      "url": "https://pasta.lternet.edu/package/data/eml/edi/648/9/1d2580fa7e39c5f0e73f81fb1f58dd12",
+      "sha256": "6c7a429a8122c59ad951231c9789da5e15d132f0dbc20c98773904f3dfe65fef",
+      "metadata_path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/edi/edi.648.9.metadata.xml",
+      "metadata_sha256": "333babfab10f69ed787db95e9834565a600ce4bae981a4686001624a31e9cbb7"
+    },
+    "enclosure": {
+      "package_id": "edi.647.9",
+      "path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/entities/edi.647.9/1_wetland_ts_fish_enclosure-2026-06-22_15-39-37.csv",
+      "url": "https://pasta.lternet.edu/package/data/eml/edi/647/9/8c3e35d92cb89c98514df81d6260e270",
+      "sha256": "2cec823de6fc15c03a63127895d2d2805cba06804ab5687ac2ff21776f810d2d",
+      "metadata_path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/edi/edi.647.9.metadata.xml",
+      "metadata_sha256": "315f2abddc755787e84d23a2336b16830050019fea157aa9806b53cbd95b2a8c"
+    },
+    "seine": {
+      "package_id": "edi.647.9",
+      "path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/entities/edi.647.9/2_wetland_ts_fish_seine-2026-06-22_15-13-17.csv",
+      "url": "https://pasta.lternet.edu/package/data/eml/edi/647/9/44dc7a48b659dcc41e145ee5135d0947",
+      "sha256": "6c2395122ee5c8bb6c1a1be2a53b5905d520c5c0e56be3268fc0390de4543ff8",
+      "metadata_path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/edi/edi.647.9.metadata.xml",
+      "metadata_sha256": "315f2abddc755787e84d23a2336b16830050019fea157aa9806b53cbd95b2a8c"
+    }
+  },
+  "profiles": {
+    "performance": {
+      "csm_rows": 168,
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "habitats": [
+        "BNMC",
+        "TC"
+      ],
+      "missing_counts": {
+        "year": 0,
+        "wetland_code": 0,
+        "module_code": 0,
+        "tc_mc_code": 0,
+        "habitat_code": 0,
+        "count_per_m2": 0,
+        "species_count": 0
+      },
+      "missing_codes_from_eml": {
+        "year": [],
+        "wetland_code": [
+          "."
+        ],
+        "module_code": [
+          "."
+        ],
+        "tc_mc_code": [
+          "."
+        ],
+        "habitat_code": [
+          "."
+        ],
+        "count_per_m2": [
+          "."
+        ],
+        "species_count": [
+          "."
+        ]
+      },
+      "physical_key": [
+        "year",
+        "tc_mc_code"
+      ],
+      "duplicate_keys": 0,
+      "months": null,
+      "taxon_codes": {}
+    },
+    "enclosure": {
+      "csm_rows": 28650,
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "habitats": [
+        "BNMC",
+        "TC"
+      ],
+      "missing_counts": {
+        "year": 0,
+        "date": 0,
+        "survey": 0,
+        "wetland_code": 0,
+        "area_code": 0,
+        "module_code": 0,
+        "tc_mc_code": 0,
+        "habitat_code": 0,
+        "enclosure_number": 0,
+        "sampling_station_label": 0,
+        "depth": 0,
+        "haul_no": 0,
+        "species_id": 0,
+        "species_code": 0,
+        "genus_name": 0,
+        "species_name": 0,
+        "count": 0,
+        "enclosure_area": 0
+      },
+      "missing_codes_from_eml": {
+        "year": [],
+        "date": [
+          "."
+        ],
+        "survey": [
+          "."
+        ],
+        "wetland_code": [
+          "."
+        ],
+        "area_code": [
+          "."
+        ],
+        "module_code": [
+          "."
+        ],
+        "tc_mc_code": [
+          "."
+        ],
+        "habitat_code": [
+          "."
+        ],
+        "enclosure_number": [
+          "."
+        ],
+        "sampling_station_label": [
+          "."
+        ],
+        "depth": [
+          "."
+        ],
+        "haul_no": [
+          "."
+        ],
+        "species_id": [
+          "."
+        ],
+        "species_code": [
+          "."
+        ],
+        "genus_name": [
+          "."
+        ],
+        "species_name": [
+          "."
+        ],
+        "count": [
+          "."
+        ],
+        "enclosure_area": [
+          "."
+        ]
+      },
+      "physical_key": [
+        "year",
+        "date",
+        "survey",
+        "tc_mc_code",
+        "enclosure_number",
+        "sampling_station_label",
+        "haul_no",
+        "species_id"
+      ],
+      "duplicate_keys": 0,
+      "months": [
+        "06",
+        "08",
+        "09",
+        "10"
+      ],
+      "taxon_codes": {
+        "CLIO": [
+          "Clevelandia",
+          "ios"
+        ],
+        "ILGI": [
+          "Ilypnus",
+          "gilberti"
+        ],
+        "QUYC": [
+          "Quietula",
+          "y_cauda"
+        ],
+        "GOFA": [
+          "Unknown Species of Gobiidae",
+          "Gobiidae"
+        ],
+        "OSCR": [
+          "Unknown Species of Osteichthyes",
+          "Osteichthyes"
+        ]
+      }
+    },
+    "seine": {
+      "csm_rows": 364320,
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "habitats": [
+        "BNMC",
+        "TC"
+      ],
+      "missing_counts": {
+        "year": 0,
+        "survey": 0,
+        "date": 0,
+        "wetland_code": 0,
+        "module_code": 0,
+        "tc_mc_code": 0,
+        "habitat_code": 0,
+        "seine_section_code": 0,
+        "seine_label": 0,
+        "seine_sample_width": 0,
+        "seine_sample_length": 0,
+        "seine_sample_area": 0,
+        "depth": 0,
+        "haul_no": 0,
+        "species_id": 0,
+        "species_code": 0,
+        "genus_name": 0,
+        "species_name": 0,
+        "count": 0
+      },
+      "missing_codes_from_eml": {
+        "year": [],
+        "survey": [
+          "."
+        ],
+        "date": [
+          "."
+        ],
+        "wetland_code": [
+          "."
+        ],
+        "module_code": [
+          "."
+        ],
+        "tc_mc_code": [
+          "."
+        ],
+        "habitat_code": [
+          "."
+        ],
+        "seine_section_code": [
+          "."
+        ],
+        "seine_label": [
+          "."
+        ],
+        "seine_sample_width": [
+          "."
+        ],
+        "seine_sample_length": [
+          "."
+        ],
+        "seine_sample_area": [
+          "."
+        ],
+        "depth": [
+          "."
+        ],
+        "haul_no": [
+          "."
+        ],
+        "species_id": [
+          "."
+        ],
+        "species_code": [
+          "."
+        ],
+        "genus_name": [
+          "."
+        ],
+        "species_name": [
+          "."
+        ],
+        "count": [
+          "."
+        ]
+      },
+      "physical_key": [
+        "year",
+        "date",
+        "survey",
+        "tc_mc_code",
+        "seine_section_code",
+        "seine_label",
+        "haul_no",
+        "species_id"
+      ],
+      "duplicate_keys": 0,
+      "months": [
+        "06",
+        "07",
+        "08",
+        "09",
+        "10"
+      ],
+      "taxon_codes": {
+        "ACFV": [
+          "Acanthogobius",
+          "flavimanus"
+        ],
+        "ANCO": [
+          "Anchoa",
+          "compressa"
+        ],
+        "ATAF": [
+          "Atherinops",
+          "affinis"
+        ],
+        "COAC": [
+          "Cosmocampus",
+          "arctus"
+        ],
+        "CYAG": [
+          "Cymatogaster",
+          "aggregata"
+        ],
+        "FUPA": [
+          "Fundulus",
+          "parvipinnis"
+        ],
+        "GAAF": [
+          "Gambusia",
+          "affinis"
+        ],
+        "GIMI": [
+          "Gillichthys",
+          "mirabilis"
+        ],
+        "GINI": [
+          "Girella",
+          "nigricans"
+        ],
+        "HYGE": [
+          "Hypsoblennius",
+          "gentilis"
+        ],
+        "HYGU": [
+          "Hypsopsetta",
+          "guttulata"
+        ],
+        "LEAR": [
+          "Leptocottus",
+          "armatus"
+        ],
+        "LETN": [
+          "Leuresthes",
+          "tenuis"
+        ],
+        "MUCE": [
+          "Mugil",
+          "cephalus"
+        ],
+        "MYCA": [
+          "Myliobatis",
+          "californicus"
+        ],
+        "PACL": [
+          "Paralabrax",
+          "clathratus"
+        ],
+        "PAMA": [
+          "Paralabrax",
+          "maculatofasciatus"
+        ],
+        "PANE": [
+          "Paralabrax",
+          "nebulifer"
+        ],
+        "PACA": [
+          "Paralichthys",
+          "californicus"
+        ],
+        "PLRI": [
+          "Pleuronichthys",
+          "ritteri"
+        ],
+        "SASA": [
+          "Sardinops",
+          "sagax"
+        ],
+        "SEPO": [
+          "Seriphus",
+          "politus"
+        ],
+        "STEX": [
+          "Strongylura",
+          "exilis"
+        ],
+        "SYAU": [
+          "Syngnathus",
+          "auliscus"
+        ],
+        "SYLE": [
+          "Syngnathus",
+          "leptorhynchus"
+        ],
+        "SYFA": [
+          "Unknown Species of Syngnathidae",
+          "Syngnathidae"
+        ],
+        "URHA": [
+          "Urolophus",
+          "halleri"
+        ],
+        "GIGE": [
+          "Gibbonsia",
+          "Gibbonsia"
+        ],
+        "SYAT": [
+          "Symphurus",
+          "atricauda"
+        ],
+        "POMY": [
+          "Porichthys",
+          "myriaster"
+        ],
+        "GYMA": [
+          "Gymnura",
+          "marmorata"
+        ],
+        "OSCL": [
+          "Unknown Species of Osteichthyes",
+          "Osteichthyes"
+        ],
+        "HERO": [
+          "Heterostichus",
+          "rostratus"
+        ],
+        "ATFA": [
+          "Unknown Species of Atherinopsidae",
+          "Atherinopsidae"
+        ],
+        "HYGI": [
+          "Hypsoblennius",
+          "gilberti"
+        ],
+        "PLOR": [
+          "Unknown Species of Pleuronectiformes",
+          "Pleuronectiformes"
+        ],
+        "GIME": [
+          "Gibbonsia",
+          "metzi"
+        ],
+        "SCFA": [
+          "Unknown Species of Sciaenidae",
+          "Sciaenidae"
+        ],
+        "HYPG": [
+          "Hypsoblennius",
+          "Hypsoblennius"
+        ],
+        "ENMO": [
+          "Engraulis",
+          "mordax"
+        ],
+        "SERA": [
+          "Sebastes",
+          "rastrelliger"
+        ],
+        "CLHA": [
+          "Clupea",
+          "pallasii"
+        ],
+        "COFA": [
+          "Unknown Species of Cottidae",
+          "Cottidae"
+        ],
+        "PLCO": [
+          "Pleuronichthys",
+          "coenosus"
+        ],
+        "DOUG": [
+          "Girella",
+          "Girella"
+        ],
+        "NEUN": [
+          "Neoclinus",
+          "uninotatus"
+        ],
+        "MUCA": [
+          "Mustelus",
+          "californicus"
+        ],
+        "PARG": [
+          "Paralabrax",
+          "Paralabrax"
+        ],
+        "TRSE": [
+          "Triakis",
+          "semifasciata"
+        ],
+        "ANDA": [
+          "Anisotremus",
+          "davidsoni"
+        ],
+        "SPAN": [
+          "Sphoeroides",
+          "annulatus"
+        ],
+        "RHPR": [
+          "Rhinobatos",
+          "productus"
+        ],
+        "MEUN": [
+          "Menticirrhus",
+          "undulatus"
+        ],
+        "SPAR": [
+          "Sphyraena",
+          "argentea"
+        ],
+        "HEAZ": [
+          "Hermosilla",
+          "azurea"
+        ],
+        "CTSA": [
+          "Ctenogobius",
+          "sagittula"
+        ],
+        "ATCA": [
+          "Atherinops",
+          "californiensis"
+        ],
+        "ALVU": [
+          "Unkonwn species of Albula",
+          "vulpes"
+        ],
+        "XECA": [
+          "Xenistius",
+          "californiensis"
+        ],
+        "OPZO": [
+          "Ophichthus",
+          "zophochir"
+        ],
+        "PLTR": [
+          "Platyrhinoidis",
+          "triesriata"
+        ],
+        "NEBL": [
+          "Neoclinus",
+          "blanchardi"
+        ],
+        "UMRO": [
+          "Umbrina",
+          "roncador"
+        ],
+        "MEBE": [
+          "Menidia",
+          "beryllina"
+        ],
+        "SCOF": [
+          "Unknown Species of Scorpaenidae",
+          "Scorpaenidae"
+        ],
+        "POLA": [
+          "Poecilia",
+          "latipinna"
+        ]
+      }
+    }
+  }
+}

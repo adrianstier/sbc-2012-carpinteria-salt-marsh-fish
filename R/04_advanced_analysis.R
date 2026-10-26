@@ -12,7 +12,7 @@ suppressPackageStartupMessages({
 })
 
 # Configuration
-DATA_DIR <- here::here("data", "raw")
+source(here::here("R", "source_data.R"))
 OUTPUT_DIR <- here::here("outputs")
 
 # =============================================================================
@@ -25,22 +25,13 @@ cat("=== Loading Data ===\n")
 results <- readRDS(file.path(OUTPUT_DIR, "analysis_results.rds"))
 
 # Load raw data
-ps_data <- read_csv(
-  file.path(DATA_DIR, "edi.648.8", "wetland_ps_fish_abundance_and_richness.csv"),
-  show_col_types = FALSE
-) %>%
+ps_data <- read_songs("performance") %>%
   filter(wetland_code == "CSM")
 
-seine_data <- read_csv(
-  file.path(DATA_DIR, "edi.647.8", "wetland_ts_fish_seine.csv"),
-  show_col_types = FALSE
-) %>%
+seine_data <- read_songs("seine") %>%
   filter(wetland_code == "CSM")
 
-enclosure_data <- read_csv(
-  file.path(DATA_DIR, "edi.647.8", "wetland_ts_fish_enclosure.csv"),
-  show_col_types = FALSE
-) %>%
+enclosure_data <- read_songs("enclosure") %>%
   filter(wetland_code == "CSM")
 
 # =============================================================================
@@ -69,7 +60,7 @@ monthly_abundance <- seine_seasonal %>%
   summarize(
     total_count = sum(count, na.rm = TRUE),
     mean_count = mean(count, na.rm = TRUE),
-    n_samples = n_distinct(paste(year, date)),
+    n_samples = n_distinct(paste(year, date, tc_mc_code, seine_label, haul_no)),
     .groups = "drop"
   ) %>%
   mutate(
@@ -83,7 +74,7 @@ seasonal_abundance <- seine_seasonal %>%
   summarize(
     total_count = sum(count, na.rm = TRUE),
     mean_count = mean(count, na.rm = TRUE),
-    n_samples = n_distinct(paste(year, date)),
+    n_samples = n_distinct(paste(year, date, tc_mc_code, seine_label, haul_no)),
     species_richness = n_distinct(species_code[count > 0]),
     .groups = "drop"
   ) %>%
@@ -112,7 +103,7 @@ species_seasonality <- seine_seasonal %>%
   ) %>%
   ungroup()
 
-cat(sprintf("  Peak abundance month: %s\n",
+cat(sprintf("  Highest catch per sampled haul (not a seasonal peak): %s\n",
             month.abb[monthly_abundance$month[which.max(monthly_abundance$cpue)]]))
 
 # =============================================================================
@@ -187,9 +178,10 @@ guild_definitions <- tribble(
   "ATAF", "Topsmelt", "Planktivore", "Marine Migrant",
   "FUPA", "California Killifish", "Omnivore", "Resident",
   "ATFA", "Atherinopsidae", "Planktivore", "Marine Migrant",
-  "POMY", "Shiner Perch", "Omnivore", "Marine Migrant",
-  "LEAR", "Arrow Goby", "Benthivore", "Resident",
-  "PACA", "Barred Sand Bass", "Piscivore", "Marine Migrant",
+  "POMY", "Specklefin Midshipman", "Benthivore", "Marine Migrant",
+  "LEAR", "Pacific Staghorn Sculpin", "Benthivore", "Marine Migrant",
+  "CLIO", "Arrow Goby", "Benthivore", "Resident",
+  "PACA", "California Halibut", "Piscivore", "Marine Migrant",
   "GIMI", "Longjaw Mudsucker", "Omnivore", "Resident",
   "PAMA", "Spotted Sand Bass", "Piscivore", "Marine Migrant",
   "ACFV", "Yellowfin Goby", "Benthivore", "Resident",
@@ -198,7 +190,7 @@ guild_definitions <- tribble(
   "SEPO", "Barred Surfperch", "Benthivore", "Marine Migrant",
   "MUCE", "Striped Mullet", "Detritivore", "Marine Migrant",
   "HYGU", "Diamond Turbot", "Benthivore", "Marine Migrant",
-  "SPAR", "California Halibut", "Piscivore", "Marine Migrant"
+  "SPAR", "Pacific Barracuda", "Piscivore", "Marine Migrant"
 )
 
 # Join guild info with abundance data
@@ -312,22 +304,7 @@ cat(sprintf("  Turnover trend: r = %.3f\n", stability_metrics$turnover_trend))
 
 cat("\n=== Nursery Function Assessment ===\n")
 
-# Calculate proportion of juvenile species (using marine migrants as proxy)
-nursery_species <- c("ATAF", "POMY", "PACA", "PAMA", "URHA", "HYGU", "SPAR")
-
-nursery_assessment <- seine_data %>%
-  mutate(is_nursery = species_code %in% nursery_species) %>%
-  group_by(year) %>%
-  summarize(
-    nursery_count = sum(count[is_nursery]),
-    total_count = sum(count),
-    nursery_proportion = nursery_count / total_count,
-    nursery_species_richness = n_distinct(species_code[is_nursery & count > 0]),
-    .groups = "drop"
-  )
-
-mean_nursery_prop <- mean(nursery_assessment$nursery_proportion, na.rm = TRUE)
-cat(sprintf("  Mean nursery species proportion: %.1f%%\n", mean_nursery_prop * 100))
+cat("  Withheld: catch identity does not establish juvenile nursery use.\n")
 
 # =============================================================================
 # 8. COMPILE AND SAVE ADVANCED RESULTS
@@ -384,7 +361,7 @@ advanced_results <- list(
     )
   ),
 
-  nursery = nursery_assessment
+  nursery = list(status = "withheld", reason = "No juvenile size/age measurements; marine migrant identity is not nursery function.")
 )
 
 # Update the main results object

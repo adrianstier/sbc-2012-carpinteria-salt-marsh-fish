@@ -1,14 +1,65 @@
 # Carpinteria Salt Marsh Fish Community Data
 
+*Last updated: 2026-10-26*
+
+## Read online
+
+[Monitoring guide: fishes of Carpinteria Salt Marsh](https://adrianstier.github.io/sbc-2012-carpinteria-salt-marsh-fish/carpinteria_salt_marsh_fishes.html)
+
+[Interactive monitoring site](https://adrianstier.github.io/sbc-2012-carpinteria-salt-marsh-fish/)
+
+GitHub Pages publishes the checked-in HTML from `main` at the repository root.
+Rebuild with `make all` before publishing a data update; GitHub does not run the
+local R analysis or access the private EDI session.
+
 ## Overview
 
-This repository contains long-term monitoring data of fish communities from California coastal wetlands, collected as part of the **SONGS (San Onofre Nuclear Generating Station) Mitigation Monitoring Program** by UC Santa Barbara's Marine Science Institute. The data span **2012-2024** and include four reference wetlands.
+This repository analyzes Carpinteria fish monitoring from **2012–2025**, using
+SONGS packages **edi.647.9** and **edi.648.9**, the revisions currently listed on
+the [program's data page](https://marinemitigation.msi.ucsb.edu/data). Original
+CSVs and EML are reused from the shared local SONGS catalogue, not re-downloaded
+or copied over revision 8. The refresh contains 168 annual location summaries
+and 43 positive-catch taxon codes, including unresolved identifications.
+
+## Reproduce the current guide and dashboards
+
+Run `Rscript R/00_install_packages.R`, then `make all`. This validates cached
+sources, rebuilds analyses and matching JSON feeds, updates embedded dashboard
+data, renders `carpinteria_salt_marsh_fishes.html`, and runs consistency checks.
+The five entry points (`index.html`, `dashboard.html`, `observatory.html`,
+`analysis.html`, and `portal.html`) use one generated `outputs/site-data.js`
+bundle rather than separate snapshots or local JSON fetches. This permits direct
+local-file loading; interactive charts still require the external D3 library.
+Scatter plots contain the 168 observed annual location summaries, not simulated
+points. Feeding-guild percentages are calculated for assigned taxa only.
+Set `SONGS_CACHE` to a complete catalogue copy if using a different machine.
+The former `01_download_data.R` placeholder URLs are removed; that command now
+resolves and validates the existing cache. It does not download newer revisions.
+
+See [data conventions and limitations](docs/data_conventions.md) and
+`data/metadata/current_sources.json` for provenance, hashes, source URLs, schema
+checks and interpretation limits. Authenticated PASTA revision-list requests on
+26 October confirmed revision 9 is the latest for both packages; remote EML
+matches the cache. Run `python3 scripts/refresh_sources.py --verify-remote`
+to repeat that check with a valid private session. Legacy models are exploratory,
+not validated inference. Seasonal,
+causal event-impact, and nursery-function claims are not supported by this update.
 
 ## Study Context
 
 The SONGS Mitigation Monitoring Program was established to evaluate the San Dieguito Wetland restoration project. Fish communities are monitored at the restoration site and reference wetlands to assess whether restoration meets biological performance standards. **Carpinteria Salt Marsh (CSM)** serves as one of the primary reference wetlands representing relatively undisturbed, natural tidal wetlands within the Southern California Bight.
 
-## Data Files
+## EEMB 106 teaching connection
+
+The sibling [EEMB 106 — Biology of Fishes](../courses/EEMB106-Biology-of-Fishes) repository uses
+these long-term monitoring data as context for a Fall 2026 Carpinteria field event. The course
+will document a single, approval-gated pre-seine eDNA/capture comparison; its field logistics,
+permits, custody records, and any class-event metadata live in the course repository, not here.
+See its `labs/carp-edna-seine-integration-2026.md` and both repositories’ `AGENTS.md` and
+`CLAUDE.md` files for the shared boundary. This repository's published EDI inputs remain
+unaltered.
+
+## Historical Revision-8 Data Files (Retained Unchanged)
 
 ### Directory: `edi.648.8/` - Performance Standard Data (Summarized)
 
@@ -97,7 +148,14 @@ The SONGS Mitigation Monitoring Program was established to evaluate the San Dieg
 
 *Note: Tijuana Estuary (TJE) was replaced by Los Penasquitos Lagoon (LPL) in 2024.*
 
-## Data Citation
+## Current Data Citations
+
+- Wetland survey fish abundance, revision 9 (2026):
+  [edi.647.9](https://doi.org/10.6073/pasta/57c6811e9ded961fbd5bdfaa074d6d9f).
+- Wetland annual fish abundance and richness, revision 9 (2026):
+  [edi.648.9](https://doi.org/10.6073/pasta/fd7423338030a23118de2d5c1ff2aa5e).
+
+## Historical Revision-8 Citations
 
 **Performance Standard Data:**
 > Schroeter, S., H. Page, D. Reed, K. Beheshti, R. Smith, and D. Huang. 2025. UCSB SONGS Mitigation Monitoring: Wetland Performance Standard - Fish Abundance and Species Richness. Environmental Data Initiative. DOI: 10.6073/pasta/a573e343e096c65ba5bc58ca25f48fa0
