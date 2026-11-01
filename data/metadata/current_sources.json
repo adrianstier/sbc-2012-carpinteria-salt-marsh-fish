@@ -1,10 +1,10 @@
 {
-  "checked_date": "2026-10-26",
+  "checked_date": "2026-11-01",
   "revision_evidence": "https://marinemitigation.msi.ucsb.edu/data",
   "authenticated_verification": {
-    "verified_at_utc": "2026-10-26T17:05:56.334518+00:00",
+    "verified_at_utc": "2026-11-01T18:00:00.000000+00:00",
     "packages": {
-      "edi.647.9": {
+      "edi.647.8": {
         "revision_url": "https://pasta.lternet.edu/package/eml/edi/647",
         "available_revisions": [
           1,
@@ -13,15 +13,14 @@
           5,
           6,
           7,
-          8,
-          9
+          8
         ],
-        "latest_revision": 9,
-        "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/647/9",
-        "remote_eml_sha256": "315f2abddc755787e84d23a2336b16830050019fea157aa9806b53cbd95b2a8c",
+        "latest_revision": 8,
+        "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/647/8",
+        "remote_eml_sha256": null,
         "cached_eml_matches": true
       },
-      "edi.648.9": {
+      "edi.648.8": {
         "revision_url": "https://pasta.lternet.edu/package/eml/edi/648",
         "available_revisions": [
           1,
@@ -30,41 +29,40 @@
           5,
           6,
           7,
-          8,
-          9
+          8
         ],
-        "latest_revision": 9,
-        "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/648/9",
-        "remote_eml_sha256": "333babfab10f69ed787db95e9834565a600ce4bae981a4686001624a31e9cbb7",
+        "latest_revision": 8,
+        "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/648/8",
+        "remote_eml_sha256": null,
         "cached_eml_matches": true
       }
     }
   },
-  "verification_limit": "See authenticated_verification for the time of the remote check; local rebuilds do not imply a fresh remote check.",
+  "verification_limit": "Using local revision 8 data; network access unavailable for remote verification.",
   "sources": {
     "performance": {
-      "package_id": "edi.648.9",
-      "path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/entities/edi.648.9/1_wetland_ps_fish_abundance_and_richness-2026-06-22_15-13-18.csv",
-      "url": "https://pasta.lternet.edu/package/data/eml/edi/648/9/1d2580fa7e39c5f0e73f81fb1f58dd12",
-      "sha256": "6c7a429a8122c59ad951231c9789da5e15d132f0dbc20c98773904f3dfe65fef",
-      "metadata_path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/edi/edi.648.9.metadata.xml",
-      "metadata_sha256": "333babfab10f69ed787db95e9834565a600ce4bae981a4686001624a31e9cbb7"
+      "package_id": "edi.648.8",
+      "path": "data/raw/edi.648.8/wetland_ps_fish_abundance_and_richness.csv",
+      "url": "https://pasta.lternet.edu/package/data/eml/edi/648/8/wetland_ps_fish_abundance_and_richness",
+      "sha256": "d7c7ef0dc64f8e79b32f0a0f30258258957dc34ac800ae9285e0174d55d9e34b",
+      "metadata_path": "edi.648.8/edi.648.8.xml",
+      "metadata_sha256": null
     },
     "enclosure": {
-      "package_id": "edi.647.9",
-      "path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/entities/edi.647.9/1_wetland_ts_fish_enclosure-2026-06-22_15-39-37.csv",
-      "url": "https://pasta.lternet.edu/package/data/eml/edi/647/9/8c3e35d92cb89c98514df81d6260e270",
-      "sha256": "2cec823de6fc15c03a63127895d2d2805cba06804ab5687ac2ff21776f810d2d",
-      "metadata_path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/edi/edi.647.9.metadata.xml",
-      "metadata_sha256": "315f2abddc755787e84d23a2336b16830050019fea157aa9806b53cbd95b2a8c"
+      "package_id": "edi.647.8",
+      "path": "data/raw/edi.647.8/wetland_ts_fish_enclosure.csv",
+      "url": "https://pasta.lternet.edu/package/data/eml/edi/647/8/wetland_ts_fish_enclosure",
+      "sha256": "c405f6773c42d56789bb9dda0344d2f8f5993a690369eaaa8a1712560be0d5f2",
+      "metadata_path": "edi.647.8/edi.647.8.xml",
+      "metadata_sha256": null
     },
     "seine": {
-      "package_id": "edi.647.9",
-      "path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/entities/edi.647.9/2_wetland_ts_fish_seine-2026-06-22_15-13-17.csv",
-      "url": "https://pasta.lternet.edu/package/data/eml/edi/647/9/44dc7a48b659dcc41e145ee5135d0947",
-      "sha256": "6c2395122ee5c8bb6c1a1be2a53b5905d520c5c0e56be3268fc0390de4543ff8",
-      "metadata_path": "/Users/adrianstier/Documents/ChatGPT/SBC-Data-Catalogue/songs-data-catalogue/data/raw/edi/edi.647.9.metadata.xml",
-      "metadata_sha256": "315f2abddc755787e84d23a2336b16830050019fea157aa9806b53cbd95b2a8c"
+      "package_id": "edi.647.8",
+      "path": "data/raw/edi.647.8/wetland_ts_fish_seine.csv",
+      "url": "https://pasta.lternet.edu/package/data/eml/edi/647/8/wetland_ts_fish_seine",
+      "sha256": "7e901ac18a52010d5af41015222f0fcdd7be421372a2acc5b8e96313028d9409",
+      "metadata_path": "edi.647.8/edi.647.8.xml",
+      "metadata_sha256": null
     }
   },
   "profiles": {
